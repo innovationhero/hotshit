@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>D3js Example - CodePen</title>
+
+  <style>
+text {
+  font: bold 48px monospace;
+}
+
+.enter {
+  fill: green;
+}
+
+.update {
+  fill: #333;
+}
+
+.exit {
+  fill: brown;
+}
+#codepen-footer,#codepen-footer *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}#codepen-footer{position:fixed;bottom:0;left:0;width:100%;padding:0 10px;height:30px;color:#eeeeee;background-color:#505050;background:-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #505050), color-stop(100%, #383838));background:-webkit-linear-gradient(#505050,#383838);background:-moz-linear-gradient(#505050,#383838);background:-o-linear-gradient(#505050,#383838);background:linear-gradient(#505050,#383838);border-top:1px solid black;border-bottom:1px solid black;box-shadow:inset 0 1px 0 #6e6e6e,0 2px 2px rgba(0,0,0,0.4);font:12px/30px "Lucida Grande","Lucida Sans Unicode",Tahoma,sans-serif;line-height:30px}#codepen-footer a{color:#a7a7a7;text-decoration:none}#codepen-footer a:hover{color:white}#footer-right{position:absolute;right:5px;top:0}#bs-button{padding:1px 6px 2px 19px;background:url(/images/browserstack.png),-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fff4d1), color-stop(100%, #c9b67b));background:url(/images/browserstack.png),-webkit-linear-gradient(#fff4d1,#c9b67b);background:url(/images/browserstack.png),-moz-linear-gradient(#fff4d1,#c9b67b);background:url(/images/browserstack.png),-o-linear-gradient(#fff4d1,#c9b67b);background:url(/images/browserstack.png),linear-gradient(#fff4d1,#c9b67b);background-position:4px center,center center;background-repeat:no-repeat;background-size:12px 12px,cover;border:0;font:11px "Lucida Grande", "Lucida Sans Unicode", Tahoma, sans-serif;border-radius:5px}#bs-button:hover{background:url(/images/browserstack.png),#fff4d1;background-position:4px center,center center;background-repeat:no-repeat;background-size:12px 12px,cover}
+
+  </style>
+
+</head>
+
+<body>
+
+  <script src="http:"></script>
+
+  <script src='http://d3js.org/d3.v3.min.js'></script>
+
+  <script>
+(function() {
+
+var alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+
+var width = 960;
+var height = 300;
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height)
+    .append("g")
+    .attr("transform", "translate(32,"+(height/2)+")");
+
+function update(data) {
+  var text = svg.selectAll("text")
+      .data(data, function (d) { return d });
+
+  text.attr("class","update")
+   .transition()
+    .attr("x", function(d,i) { return i*32 });
+
+  text.enter().append("text")
+    .attr("class","enter")
+    .attr("dy", ".35em")
+    .attr("y", -60)
+    .attr("x", function(d,i) { return i*32; })
+    .style("fill-opacity",1e-6)
+    .text(function(d) { return d; })
+   .transition()
+    .duration(750)
+    .attr("y",0)
+    .style("fill-opacity",1);
+
+  text.exit()
+    .attr("class", "exit")
+   .transition()
+    .duration(750)
+    .attr("y", 60)
+    .style("fill-opacity",1e-6)
+    .remove();
+}
+
+update(alphabet);
+
+setInterval(function () {
+  update(shuffle(alphabet)
+         .slice(0,Math.floor(Math.random()*26))
+         .sort());
+},1500);
+
+function shuffle(array) {
+  var m = array.length, t, i;
+  while (m) {
+    i = Math.floor(Math.random()*m--);
+    t = array[m], array[m] = array[i], array[i] = t;
+  }
+  return array;
+}
+
+})();
+  </script>
+
+</body>
+
+</html>

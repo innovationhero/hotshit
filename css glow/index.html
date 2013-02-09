@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Visualize Glowing v.1: text, border with control palette - CodePen</title>
+
+  <style>
+@import url(http://fonts.googleapis.com/css?family=Concert+One);
+body,
+.test {
+  background: #111111;
+  overflow: hidden;
+}
+/* Normal text, normal div style: */
+text {
+  font: 1.5em 'Concert One', sans-serif;
+  text-transform: uppercase;
+  color: #aaaaaa;
+  text-align: center;
+}
+div.normal {
+  background: #111111;
+  border: 1px solid red;
+  border-radius: 5px;
+  width: 80%;
+  height: 100px;
+  margin: 60px;
+  text-align: center;
+  vertical-align: middle;
+  /* oh! nice stuff ! */
+
+}
+/* TEXT GLOWING: */
+h1 {
+  text-shadow: 0 0 30px red ;
+}
+/* BORDER GLOWING: */
+div.glowing {
+  border-color: red;
+  box-shadow: 0 0 30px #ff0000;
+}
+/* COLOR TABLETTE */
+.clear {
+  clear: both;
+}
+.test {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 200px;
+}
+.color-palette {
+  border: 2px solid #000;
+  padding: 15px;
+  width: 180px;
+}
+.color-swatch {
+  box-sizing: border-box;
+  width: 16px;
+  height: 16px;
+  float: left;
+  margin: 2px 2px 0 0;
+}
+.color-swatch.selected {
+  border: 2px solid black;
+}
+.color-palette .break {
+  margin: 5px;
+}
+.result {
+  height: 30px;
+}
+#codepen-footer,#codepen-footer *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}#codepen-footer{position:fixed;bottom:0;left:0;width:100%;padding:0 10px;height:30px;color:#eeeeee;background-color:#505050;background:-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #505050), color-stop(100%, #383838));background:-webkit-linear-gradient(#505050,#383838);background:-moz-linear-gradient(#505050,#383838);background:-o-linear-gradient(#505050,#383838);background:linear-gradient(#505050,#383838);border-top:1px solid black;border-bottom:1px solid black;box-shadow:inset 0 1px 0 #6e6e6e,0 2px 2px rgba(0,0,0,0.4);font:12px/30px "Lucida Grande","Lucida Sans Unicode",Tahoma,sans-serif;line-height:30px}#codepen-footer a{color:#a7a7a7;text-decoration:none}#codepen-footer a:hover{color:white}#footer-right{position:absolute;right:5px;top:0}#bs-button{padding:1px 6px 2px 19px;background:url(/images/browserstack.png),-webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #fff4d1), color-stop(100%, #c9b67b));background:url(/images/browserstack.png),-webkit-linear-gradient(#fff4d1,#c9b67b);background:url(/images/browserstack.png),-moz-linear-gradient(#fff4d1,#c9b67b);background:url(/images/browserstack.png),-o-linear-gradient(#fff4d1,#c9b67b);background:url(/images/browserstack.png),linear-gradient(#fff4d1,#c9b67b);background-position:4px center,center center;background-repeat:no-repeat;background-size:12px 12px,cover;border:0;font:11px "Lucida Grande", "Lucida Sans Unicode", Tahoma, sans-serif;border-radius:5px}#bs-button:hover{background:url(/images/browserstack.png),#fff4d1;background-position:4px center,center center;background-repeat:no-repeat;background-size:12px 12px,cover}
+
+  </style>
+
+  <script src="js/prefixfree.min.js"></script>
+
+</head>
+
+<body>
+
+  <br />
+<div class="normal glowing">
+  <h1><text>CSS GLOW</text><text class="color">: Want another color ?</text>
+  </h1>
+</div>
+<div class='test'></div>
+
+<div class='result'></div>
+
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+
+  <script>
+(function() {
+
+$.fn.colorPalette = function (options) {
+  this.addClass("color-palette");
+  this.colors = {};
+
+  var greys = ["#000", "#222", "#333", "#444", "#666", "#888", "#aaa", "#ccc", "#eee", "#fff"];
+
+  for (var i = 0; i < greys.length; i++) {
+    var grey = greys[i];
+    var colorSwatch = $("<div class='color-swatch' data-color='"+grey+"'></div>");
+    colorSwatch.css({"background-color": grey});
+
+    this.colors[grey] = colorSwatch;
+    this.append(colorSwatch);
+  }
+  this.append("<div class='clear'/>");
+  this.append("<div class='break'/>");
+
+  var primes = ["#900", "#f00", "#f90", "#ff0", "#0f0", "#0ff", "#4a86e8", "#00f", "#90f", "#f0f"];
+
+  for (var i = 0; i < primes.length; i++) {
+    var prime = primes[i];
+    var colorSwatch = $("<div class='color-swatch' data-color='"+prime+"'></div>");
+    colorSwatch.css({"background-color": prime});
+
+    this.colors[prime] = colorSwatch;
+    this.append(colorSwatch);
+  }
+  this.append("<div class='clear'/>");
+  this.append("<div class='break'/>");
+
+  var otherColors = ["#E6B8AF", "#F4CCCC", "#FCE5CD", "#FFF2CC", "#D9EAD3", "#D0E0E3", "#C9DAF8", "#CFE2F3", "#D9D2E9", "#EAD1DC", "#DD7E6B", "#EA9999", "#F9CB9C", "#FFE599", "#B6D7A8", "#A2C4C9", "#A4C2F4", "#9FC5E8", "#B4A7D6", "#D5A6BD", "#CC4125", "#E06666", "#F6B26B", "#FFD966", "#93C47D", "#76A5AF", "#6D9EEB", "#6FA8DC", "#8E7CC3", "#C27BA0", "#A61C00", "#C00", "#E69138", "#F1C232", "#6AA84F", "#45818E", "#3C78D8", "#3D85C6", "#674EA7", "#A64D79", "#85200C", "#900", "#B45F06", "#BF9000", "#38761D", "#134F5C", "#15C", "#0B5394", "#351C75", "#741B47", "#5B0F00", "#600", "#783F04", "#7F6000", "#274E13", "#0C343D", "#1C4587", "#073763", "#20124D", "#4C1130"];
+
+  for (var i = 0; i < otherColors.length; i++) {
+    var otherColor = otherColors[i]
+    var colorSwatch = $("<div class='color-swatch' data-color='"+otherColor+"'></div>");
+    colorSwatch.css({"background-color": otherColor});
+
+    this.colors[otherColor] = colorSwatch;
+    this.append(colorSwatch);
+  }
+
+  for (var color in this.colors) {
+    var swatch = this.colors[color];
+
+    swatch.click(function () {
+      $(this).siblings().removeClass("selected");
+      $(this).addClass("selected");
+
+      var color = $(this).data("color");
+
+      options.colorChange(color);
+    });
+  }
+
+  this.append("<div class='clear'/>");
+
+  this.changeSelected = function (color) {
+    var swatch = this.colors[color];
+    if (swatch) {
+      swatch.siblings().removeClass("selected");
+      swatch.addClass("selected");
+    }
+  };
+
+  return this;
+}
+
+/* INJECTED On Click*/
+var colorPalette = $(".test").colorPalette({
+  colorChange: function (color) {
+    $("h1").css("text-shadow", '0 0 30px '+ color),
+    $("div.glowing").css("box-shadow", '0 0 30px'+ color),
+    $("div.glowing").css("border", '1px solid'+ color),
+    $(".color").empty().append(': ' + color);
+  }
+});
+
+colorPalette.changeSelected("#f90");
+
+})();
+  </script>
+
+</body>
+
+</html>
