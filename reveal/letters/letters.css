@@ -1,0 +1,84 @@
+/*----------------------------
+	Container & textbox
+-----------------------------*/
+
+
+/* Reset body padding and margins */
+body { margin:0; padding:0; }
+
+/* Make Header Sticky */
+#header_container {
+ text-align: justify;
+	height:60px;
+	left:20px;
+	position:fixed;
+	width:100%;
+	top:0px;
+	background: #c40001;
+	z-index: 2;
+	overflow:hidden;
+	display:inline-block;
+}
+
+#logo{
+ height: 32px;
+ width: 90px;
+ text: "ekoki.me";
+}
+
+/* Make Footer Sticky */
+#footer_container {
+	bottom:0;
+	height:90px;
+	position:fixed;
+	width:100%;
+	background: #c40001;
+	z-index: 1;
+}
+
+
+
+
+#nodification{
+top:10px;
+/*
+text-align:left; */
+	font-size: 14px;
+		width: 800px;
+/*	padding: 10px 0 100px;
+/*	min-height: 90px; */
+	font-family: 'Lato';
+	color: white;
+	text-shadow: 0 0 20px black;
+}
+
+
+#userText{
+  border-top: none;
+  background:none;
+ text-align: justify;
+  border:none;
+  border-bottom:1px solid #aaa;
+  width: 500px;
+  display: block;
+  font-family: 'Lato';
+  font-size: 14px;
+  color: white;
+  text-shadow: 0 0 20px yellow;
+  margin: 0 auto 0px;
+  padding: 10px;
+  text-align: center;
+  outline: none;
+}
+
+
+
+/*==CSS Mask by Amanda Hawkins==*/
+.ex1 {
+	-webkit-mask-image: url(http://ahhh.co/files/ex1.png);
+	-o-mask-image: url(http://ahhh.co/files/ex1.png);
+	-moz-mask-image: url(http://ahhh.co/files/ex1.png);
+	mask-image: url(http://ahhh.co/files/ex1.png);
+	color: #3f3f3f;
+	text-shadow: 2px 3px #fff, 7px 7px #c3c1c2;
+}
