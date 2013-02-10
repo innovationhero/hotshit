@@ -3,7 +3,7 @@
 $.fn.shuffleLetters = function(prop){
 
   var options = $.extend({
-		"step"	: 12,	// How many times should the letters be changed
+		"step"	: 100,	// How many times should the letters be changed
 		"fps"	: 200,	// Frames Per Second
 		"text"	: "" 	// Use this text instead of the contents
 	},prop)
@@ -99,7 +99,7 @@ $.fn.shuffleLetters = function(prop){
 	var pool = "";
 
 	if (type == "lowerLetter"){
-		pool = "abcdefghijklmnopqrstuvwxyz0123456789";
+		pool = "abcdefghijklmnopqrstuvwxyz0123456789あかさたないきしちにうくすつぬえけせてねおこそとのはまやらわひみりゐふむゆるんへめれゑほもよろをがざだばぱぎじぢびぴぐずづぶぷげぜでべぺごぞどぼぽきゃしゃちゃひゃぴゃきゅしゅちゅひゅぴゅきょしょちょひょぴょ ぎゃじゃにゃびゃみゃぎゅじゅにゅびゅみゅぎょじょにょびょみょりゃりゅりょぢゃぢゅアカサタナイキシチニウクスツヌエケセテネオコソトノハマヤラワヒミリヰフムユルンヘメレヱホモヨロヲイェヷヴァシェウィヸヴィジェウェヴヴェチェウォヹヴォヺヴャティツァファトゥツィフィテュツェフェディツォフォドゥフュデュ";
 	}
 	else if (type == "upperLetter"){
 		pool = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
