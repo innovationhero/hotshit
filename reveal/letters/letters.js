@@ -3,8 +3,8 @@
 $.fn.shuffleLetters = function(prop){
 
   var options = $.extend({
-		"step"	: 100,	// How many times should the letters be changed
-		"fps"	: 900,	// Frames Per Second
+		"step"	: 2,	// How many times should the letters be changed
+		"fps"	: 300,	// Frames Per Second
 		"text"	: "" 	// Use this text instead of the contents
 	},prop)
 
@@ -99,10 +99,10 @@ $.fn.shuffleLetters = function(prop){
 	var pool = "";
 
 	if (type == "lowerLetter"){
-		pool = "abcdefghijklmnopqrstuvwxyz0123456789あかさたないきしちにうくすつぬえけせてねおこそとのはまやらわひみりゐふむゆるんへめれゑほもよろをがざだばぱぎじぢびぴぐずづぶぷげぜでべぺごぞどぼぽきゃしゃちゃひゃぴゃきゅしゅちゅひゅぴゅきょしょちょひょぴょ ぎゃじゃにゃびゃみゃぎゅじゅにゅびゅみゅぎょじょにょびょみょりゃりゅりょぢゃぢゅアカサタナイキシチニウクスツヌエケセテネオコソトノハマヤラワヒミリヰフムユルンヘメレヱホモヨロヲイェヷヴァシェウィヸヴィジェウェヴヴェチェウォヹヴォヺヴャティツァファトゥツィフィテュツェフェディツォフォドゥフュデュ";
+		pool = "abcdefghijklmnopqrstuvwxyz0123456789ØstjälkäffäääÙùÛûÜüŸÿÔôŒœÎîÏïÉéÈèÊêËëÇçÀàÂâÆæ猿凹渦靴稼拐涯垣殻潟喝褐缶頑挟矯襟隅渓蛍嫌洪溝昆崎皿桟傘肢遮蛇酌汁塾尚宵縄壌唇甚据杉斉逝仙栓挿曹槽藻駄濯棚挑眺釣塚漬亭偵泥搭棟洞凸屯把覇漠肌鉢披扉猫頻瓶雰塀泡俸褒朴僕堀磨抹岬妄厄癒悠羅竜戻枠";
 	}
 	else if (type == "upperLetter"){
-		pool = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+		pool = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789あかさたないきしちにうくすつぬえけせてねおこそとのはまやらわひみりゐふむゆるんへめれゑほもよろをがざだばぱぎじぢびぴぐずづぶぷげぜでべぺごぞどぼぽきゃしゃちゃひゃぴゃきゅしゅちゅひゅぴゅきょしょちょひょぴょ ぎゃじゃにゃびゃみゃぎゅじゅにゅびゅみゅぎょじょにょびょみょりゃりゅりょぢゃぢゅアカサタナイキシチニウクスツヌエケセテネオコソトノハマヤラワヒミリヰフムユルンヘメレヱホモヨロヲイェヷヴァシェウィヸヴィジェウェヴヴェチェウォヹヴォヺヴャティツァファトゥツィフィテュツェフェディツォフォドゥフュデュ";
 	}
 	else if (type == "symbol"){
 		pool = ",.?/\\(^)![]{}*&^%$#'\"";

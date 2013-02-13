@@ -1,7 +1,7 @@
 /*----------------------------
 	Container & textbox
 -----------------------------*/
-
+@import url(http://fonts.googleapis.com/css?family=Gloria+Hallelujah);
 
 /* Reset body padding and margins */
 body { margin:0; padding:0; }
@@ -40,6 +40,7 @@ body { margin:0; padding:0; }
 
 
 #nodification{
+font: 20px 'Gloria Hallelujah', cursive;
 top:10px;
 /*
 text-align:left; */
@@ -47,21 +48,22 @@ text-align:left; */
 		width: 100%;
 /*	padding: 10px 0 100px;
 /*	min-height: 90px; */
-	font-family: 'Lato';
+/*	font-family: 'Lato'; */
 	color: white;
 	text-shadow: 0 0 20px black;
 }
 
 
 #userText{
+font: 20px 'Gloria Hallelujah', cursive;
   border-top: none;
   background:none;
  text-align: justify;
   border:none;
   border-bottom:1px solid #aaa;
-  width: 500px;
+  width: 80%;
   display: block;
-  font-family: 'Lato';
+ /* font-family: 'Lato'; */
   font-size: 14px;
   color: white;
   text-shadow: 0 0 20px yellow;
