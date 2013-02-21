@@ -8,6 +8,8 @@ top:320;
 background-color:#EB007D;
 width:13px;
 height:13px;
+opacity:1;
+
 -moz-animation-name:bounce_fountainG;
 -moz-animation-duration:0.6s;
 -moz-animation-iteration-count:infinite;
@@ -114,6 +116,7 @@ animation-delay:0.66s;
 }
 
 @-moz-keyframes bounce_fountainG{
+
 0%{
 -moz-transform:scale(1);
 background-color:#EB007D;
@@ -128,12 +131,13 @@ background-color:#FFAA00;
 
 @-webkit-keyframes bounce_fountainG{
 0%{
+opacity:0;
 -webkit-transform:scale(1);
 background-color:#EB007D;
 }
 
 100%{
--webkit-transform:scale(.3);
+-webkit-transform:scale(.2);
 background-color:#FFAA00;
 }
 
