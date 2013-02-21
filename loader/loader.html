@@ -1,0 +1,220 @@
+
+<!doctype html>
+<html ng-app="components">
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
+
+
+  <link rel="stylesheet" href="http://angularjs.org/css/bootstrap.min.css">
+
+
+    <script src="components.js"></script>
+    <script src="beers.js"></script>
+  </head>
+  <body>
+
+    <tabs>
+
+      <pane title="Localization">
+        Date: {{ '2012-04-01' | date:'fullDate' }} <br>
+        Currency: {{ 123456 | currency }} <br>
+        Number: {{ 98765.4321 | number }} <br>
+      </pane>
+
+      <pane title="Pluralization">
+        <div ng-controller="BeerCounter">
+          <div ng-repeat="beerCount in beers">
+            <ng-pluralize count="beerCount" when="beerForms"></ng-pluralize>
+          </div>
+        </div>
+      </pane>
+
+    </tabs>
+
+  </body>
+</html>
+
+
+
+
+
+		<div class="reveal">
+
+<!-- BEGIN: ui-scrollfix
+<p ui-scrollfix>
+		<div> <IMG ng-model="logo" ng-src="ekokilogo.png" alt="ekoki.me" height="32" width="90" padding="3"/>
+			<div id="container" class="ex1">Welcome back, user</div>
+		</div>
+</p>
+!-- END: ui-scrollfix -->
+
+
+<!-- BEGIN: Sticky Header -->
+<div id="header_container">
+  <img id="logo" src="ekokilogo.png" alt="ekoki.me"/> <div id="nodification">Welcome back, user</div>
+
+</div>
+<!-- END: Sticky Header -->
+
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+				<section class="hero-unit">
+<h6> 7ot do7'ol weshterak we edit personal info </h6>
+
+				</section>
+
+
+				<!-- Example of nested vertical slides -->
+				<section id="forest-elephants">
+
+					<section>
+
+			<h6>		game stats - previously on blur </h6>
+
+					</section>
+						<section>
+					<h6>Intergalactic Interconnections
+					<p>
+						You can link between slides internally,
+						<a href="#/2/3">like this</a>.
+					</p>
+					</h6>
+				</section>
+
+					<section>
+
+						 <div ng-app>
+						  <label>Name:</label>
+						  <input type="text" ng-model="yourName">
+						  <p>Hello {{yourName}}!</p>
+    				 	 </div>
+
+					</section>
+					<section>
+						 another thing 2
+
+
+
+
+					</section>
+					<section>
+
+					another thing 3
+					</section>
+				</section>
+
+				<section>
+<h6>				extreme right section </h6>
+				</section>
+
+
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.min.js"></script>
+
+
+
+
+
+
+		<script>
+
+			// Full list of configuration options available here:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: false,
+				progress: false,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: []
+			});
+
+		</script>
+
+
+
+
+
+<!--
+<div ng-app="loaderApp" ng-controller="loaderCtrl">
+
+       <div class="boxLoad"
+           ng-repeat="box in boxes"
+           animate="box"
+           />
+</div>
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+<div ng-app="loaderApp" ng-controller="loaderCtrl">
+
+       <div class="boxLoad"
+           ng-repeat="box in boxes"
+           ng-style="{ 'backgroundColor':shape.color, 'left':shape.x+'px', 'top':shape.y+'px' }"
+           />
+</div>
+-->
+
+<!--
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+-->
+
+<!--
+<div class="chase" id="preloader">
+  <div id="status">
+	  <div id="boxLoad">
+		  <div class="boxLoad" id="boxLoad_1">
+		  </div>
+
+		  <div class="boxLoad" id="boxLoad_2">
+		  </div>
+
+		  <div class="boxLoad" id="boxLoad_3">
+		  </div>
+
+		  <div class="boxLoad" id="boxLoad_4">
+		  </div>
+
+		  <div class="boxLoad" id="boxLoad_5">
+		  </div>
+
+		  <div class="boxLoad" id="boxLoad_6">
+		  </div>
+
+		  <div class="boxLoad" id="boxLoad_7">
+		  </div>
+
+		  <div class="boxLoad" id="boxLoad_8">
+		  </div>
+    </div>
+  </div>
+</div>
+-->

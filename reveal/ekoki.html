@@ -1,9 +1,14 @@
 <!doctype html>
-<html lang="en" ng-app>
+<html lang="en">
 
 	<head>
 
 		<meta charset="utf-8">
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
+
+      	<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 
 
 		<title>ekoki.me - all ideas shall be echoed!</title>
@@ -22,26 +27,23 @@
 
 		<link rel="stylesheet" href="letters/letters.css">
 
+
+		<link rel="stylesheet" href="loader/loader.css">
+
 		<link rel="stylesheet" href="css/theme/default.css" id="theme">
 
-
-      	<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
 
 
   		<script src="http://code.jquery.com/jquery-1.6.3.min.js"></script>
 
     	<script src="letters/letters.js"></script>
 
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.min.js"></script>
-		<!-- For syntax highlighting
-		<link rel="stylesheet" href="lib/css/zenburn.css">
-			<link rel="stylesheet" href='http://twitter.github.com/bootstrap/assets/css/bootstrap.css'>
-
-  -->
+    	<script src="loader/loader.js"></script>
 
 	</head>
 
 	<body>
+
 
 		<div class="reveal">
 
@@ -177,13 +179,24 @@
 		</script>
 
 
+
 <!-- BEGIN: Sticky Footer -->
 <div id="footer_container">
     <div id="footer">
-
-		<input type="text" id="userText" maxlength="80" > </input>
-
+    <!-- BEGIN: UserInput -->
+		<input type="text" id="userText" maxlength="80" >
+			<!-- BEGIN: Loader -->
+	<div  ng-app="loader">
+		<loadingbar/>
+	</div>
+	<!-- END: Loader -->
+		</input>
     </div>
+    <!-- END: UserInput -->
+
+
+
+
 </div>
 <!-- END: Sticky Footer -->
 
