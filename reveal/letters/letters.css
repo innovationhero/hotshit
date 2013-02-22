@@ -2,6 +2,7 @@
 	Container & textbox
 -----------------------------*/
 @import url(http://fonts.googleapis.com/css?family=Gloria+Hallelujah);
+@import url(http://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister);
 
 /* Reset body padding and margins */
 body { margin:0; padding:0; }
@@ -40,7 +41,8 @@ body { margin:0; padding:0; }
 
 
 #nodification{
-font: 20px 'Gloria Hallelujah', cursive;
+
+font: 20px 'Love Ya Like A Sister', cursive;
 top:10px;
 /*
 text-align:left; */
@@ -55,7 +57,7 @@ text-align:left; */
 
 
 #userText{
-font: 20px 'Gloria Hallelujah', cursive;
+font: 20px 'Love Ya Like A Sister', cursive;
   border-top: none;
   background:none;
  text-align: justify;

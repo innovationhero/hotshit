@@ -3,12 +3,12 @@
 /******************/
 
 .fountainG{
-position: fixed;
-top:320;
+position: absolute;
 background-color:#EB007D;
 width:13px;
 height:13px;
 opacity:1;
+ text-align: inherit;
 
 -moz-animation-name:bounce_fountainG;
 -moz-animation-duration:0.6s;

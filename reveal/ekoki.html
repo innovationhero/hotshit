@@ -58,7 +58,7 @@
 
 <!-- BEGIN: Sticky Header -->
 <div id="header_container">
-  <img id="logo" src="ekokilogo.png" alt="ekoki.me"/> <div id="nodification">Welcome back, user</div>
+  <img id="logo" src="ekokilogo.png" alt="ekoki.me"/> <div id="nodification">username, what's up!'</div>
 
 </div>
 <!-- END: Sticky Header -->
@@ -108,6 +108,89 @@
 			<h6> element3 </h6>
 			<iframe width="560" height="315" src="http://www.youtube.com/embed/ZhfUv0spHCY" frameborder="0" allowfullscreen></iframe>
 					</section>
+
+					<section>
+			<h6> element4 </h6>
+			<iframe width="560" height="315" src="http://www.youtube.com/embed/ZhfUv0spHCY" frameborder="0" allowfullscreen></iframe>
+					</section>
+
+					<section>
+			<h6> element5 </h6>
+			<iframe width="560" height="315" src="http://www.youtube.com/embed/ZhfUv0spHCY" frameborder="0" allowfullscreen></iframe>
+
+			<script>/// the main code to utalize the above
+
+$(function(){
+
+	// nodification is the DOM element;nodification
+	// userText is the textbox
+
+	var nodification = $("#nodification")
+		userText = $('#userText');
+
+	// Shuffle the contents of nodification
+	nodification.shuffleLetters();
+
+	// Bind events
+	userText.click(function () {
+
+	  userText.val("");
+
+	}).bind('keypress',function(e){
+
+		if(e.keyCode == 13){
+
+			// The return key was pressed
+
+			nodification.shuffleLetters({
+				"text": userText.val()
+			});
+
+			userText.val("");
+		}
+
+	}).hide();
+
+	// Leave a 4 second pause
+
+	setTimeout(function(){
+
+		// Shuffle the nodification with custom text
+		nodification.shuffleLetters({
+			"text": "this is your nodification area!"
+		});
+
+		userText.val("this is what i call the stage, type -h for help").fadeIn();
+
+	},4000);
+
+}); </script>
+				</section>
+
+					<section>
+			<h6> element6 </h6>
+			<iframe width="560" height="315" src="http://www.youtube.com/embed/ZhfUv0spHCY" frameborder="0" allowfullscreen></iframe>
+					</section>
+
+					<section>
+			<h6> element7 </h6>
+			<iframe width="560" height="315" src="http://www.youtube.com/embed/ZhfUv0spHCY" frameborder="0" allowfullscreen></iframe>
+					</section>
+					<section>
+			<h6> element8 </h6>
+			<iframe width="560" height="315" src="http://www.youtube.com/embed/ZhfUv0spHCY" frameborder="0" allowfullscreen></iframe>
+					</section>
+
+					<section>
+			<h6> element9 </h6>
+			<iframe width="560" height="315" src="http://www.youtube.com/embed/ZhfUv0spHCY" frameborder="0" allowfullscreen></iframe>
+					</section>
+
+					<section>
+			<h6> element10 </h6>
+			<iframe width="560" height="315" src="http://www.youtube.com/embed/ZhfUv0spHCY" frameborder="0" allowfullscreen></iframe>
+					</section>
+
 				</section>
 
 				<section>
@@ -137,16 +220,6 @@
 				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
 				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
 
-				// Optional libraries used to extend on reveal.js
-				dependencies: [
-					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
-					// { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
-				]
 			});
 
 		</script>
@@ -158,18 +231,14 @@
     <div id="footer">
     <!-- BEGIN: UserInput -->
 		<input type="text" id="userText" maxlength="80" >
-			<!-- BEGIN: Loader -->
-	<div  ng-app="loader">
-		<loadingbar/>
-	</div>
-	<!-- END: Loader -->
 		</input>
     </div>
     <!-- END: UserInput -->
-
-
-
-
+	<!-- BEGIN: Loader -->
+		<div  ng-app="loader">
+			<loadingbar/>
+		</div>
+	<!-- END: Loader -->
 </div>
 <!-- END: Sticky Footer -->
 
