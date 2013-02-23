@@ -52,8 +52,7 @@ html,
 body {
 	font-family: 'Lato', sans-serif, serif; font-weight: 400;
 
-
-	 	background: #c40001;
+	background: #c40001;
 
 	width: 100%;
 	height: 100%;
@@ -83,111 +82,6 @@ body {
 	}
 }
 
-/*********************************************
- * HEADERS
- *********************************************/
-
-.reveal h1,
-.reveal h2,
-.reveal h3,
-.reveal h4,
-.reveal h5,
-.reveal h6 {
-	-webkit-hyphens: auto;
-	   -moz-hyphens: auto;
-	        hyphens: auto;
-
-	word-break: break-all;
-	word-break: break-word;
-}
-
-.reveal h1 { font-size: 3.77em; }
-.reveal h2 { font-size: 2.11em;	}
-.reveal h3 { font-size: 1.55em;	}
-.reveal h4 { font-size: 1em;	}
-
-
-/*********************************************
- * VIEW FRAGMENTS
- *********************************************/
-
-.reveal .slides section .fragment {
-	opacity: 0;
-
-	-webkit-transition: all .2s ease;
-	   -moz-transition: all .2s ease;
-	    -ms-transition: all .2s ease;
-	     -o-transition: all .2s ease;
-	        transition: all .2s ease;
-}
-	.reveal .slides section .fragment.visible {
-		opacity: 1;
-	}
-
-.reveal .slides section .fragment.grow {
-	opacity: 1;
-}
-	.reveal .slides section .fragment.grow.visible {
-		-webkit-transform: scale( 1.3 );
-		   -moz-transform: scale( 1.3 );
-		    -ms-transform: scale( 1.3 );
-		     -o-transform: scale( 1.3 );
-		        transform: scale( 1.3 );
-	}
-
-.reveal .slides section .fragment.shrink {
-	opacity: 1;
-}
-	.reveal .slides section .fragment.shrink.visible {
-		-webkit-transform: scale( 0.7 );
-		   -moz-transform: scale( 0.7 );
-		    -ms-transform: scale( 0.7 );
-		     -o-transform: scale( 0.7 );
-		        transform: scale( 0.7 );
-	}
-
-.reveal .slides section .fragment.roll-in {
-	opacity: 0;
-
-	-webkit-transform: rotateX( 90deg );
-	   -moz-transform: rotateX( 90deg );
-	    -ms-transform: rotateX( 90deg );
-	     -o-transform: rotateX( 90deg );
-	        transform: rotateX( 90deg );
-}
-	.reveal .slides section .fragment.roll-in.visible {
-		opacity: 1;
-
-		-webkit-transform: rotateX( 0 );
-		   -moz-transform: rotateX( 0 );
-		    -ms-transform: rotateX( 0 );
-		     -o-transform: rotateX( 0 );
-		        transform: rotateX( 0 );
-	}
-
-.reveal .slides section .fragment.fade-out {
-	opacity: 1;
-}
-	.reveal .slides section .fragment.fade-out.visible {
-		opacity: 0;
-	}
-
-.reveal .slides section .fragment.highlight-red,
-.reveal .slides section .fragment.highlight-green,
-.reveal .slides section .fragment.highlight-blue {
-	opacity: 1;
-}
-	.reveal .slides section .fragment.highlight-red.visible {
-		color: #ff2c2d
-	}
-	.reveal .slides section .fragment.highlight-green.visible {
-		color: #17ff2e;
-	}
-	.reveal .slides section .fragment.highlight-blue.visible {
-		color: #1b91ff;
-	}
-
-
 
 
 /*********************************************
@@ -199,9 +93,11 @@ body {
 	width: 100%;
 	height: 100%;
 	min-height: 640px; /* min height + 40 to account for padding */
+background-image: url('http://wiki.ggc.edu/images/thumb/0/05/Skeleton_head_all_layers.gif/400px-Skeleton_head_all_layers.gif');
 }
 
 .reveal .slides {
+
 	position: absolute;
 	max-width: 900px;
 	min-height: 600px;
@@ -232,6 +128,7 @@ body {
 
 .reveal .slides>section,
 .reveal .slides>section>section {
+
 	display: none;
 	position: absolute;
 	width: 100%;
@@ -269,6 +166,7 @@ body {
 }
 
 .reveal .slides>section {
+
 	left: -50%;
 	top: -50%;
 }
