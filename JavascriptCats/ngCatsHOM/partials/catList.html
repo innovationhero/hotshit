@@ -1,0 +1,23 @@
+<div ng-controller='CatListController'>
+  <div class="row span12 catGrid">
+    
+    <!-- Grid of cat thumbnails -->
+    <ul class="thumbnails">
+      <li ng-repeat="cat in cats" ng-click="getDetail(cat.id)" class="span2" ng-mouseover="showName(cat.name)">
+        <div class="thumbnail">
+          <!-- Remember to use 'ng-src' for images -->
+          <img ng-src="{{cat.thumbnail}}">
+        </div>
+      </li>
+    </ul>
+
+  </div>
+
+  <!-- Nav buttons and Cat Name -->
+  <div class="row listButtons">
+    <!-- <button class='btn btn-custom span2' ng-click="changePage('prev')">< More Cats</button> -->
+    <div class="span8"><p>*All cats pictures currently reside at the House of Mews, but may not be immediately available for adoption.</p><p> Please inquire for the particular status of each cat.</p></div>
+    <div class="catName span2">{{name}}</div>
+    <button class='btn btn-custom span2' ng-click="changePage('next')">More Cats ></button>
+  </div>
+</div>
