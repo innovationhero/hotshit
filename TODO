@@ -7,3 +7,5 @@ TODO
 - embedding video http://ngmodules.org/modules/ng-videosharing-embed
 - make the class="transparent" only active when the user activates the reveal navigationan and the element infocus is not active("playing video or music"), element4 is transperant
 - implement IFRAME FOR TORII OAUTH2 SIGNUP AND LOGIN in the extereme left
+- apply ngInfiniteScroll to the reveal section element along with the json data ng service
+http://binarymuse.github.com/ngInfiniteScroll/demo_basic.html
