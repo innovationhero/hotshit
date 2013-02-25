@@ -232,3 +232,13 @@ background-image: url("http://www.bartendergirl.com/press_kit/images/bartenderGi
 	    -ms-transform: translate3d(0, 300px, 0) rotateX(-70deg) translate3d(0, 300px, 0);
 	        transform: translate3d(0, 300px, 0) rotateX(-70deg) translate3d(0, 300px, 0);
 }
+
+/*********************************************
+ * Fo2sh Transperant
+ *********************************************/
+
+.transparent
+{
+filter:alpha(opacity=50);
+opacity: 0.50;
+}

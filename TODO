@@ -5,3 +5,5 @@ TODO
 - file upload http://cotag.github.com/Condominios/ http://ngmodules.org/modules/Condo
 - infinite scroll http://ngmodules.org/modules/ngInfiniteScroll
 - embedding video http://ngmodules.org/modules/ng-videosharing-embed
+- make the class="transparent" only active when the user activates the reveal navigationan and the element infocus is not active("playing video or music"), element4 is transperant
+- implement IFRAME FOR TORII OAUTH2 SIGNUP AND LOGIN in the extereme left
