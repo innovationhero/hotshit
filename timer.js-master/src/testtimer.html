@@ -1,0 +1,32 @@
+<html>
+<head>
+<script src="Timer.js"></script>
+<script>
+
+
+    var audio = document.createElement( 'audio' );
+    audio.src = 'likeme.mp3';
+    audio.play();
+
+
+    var timer = new Timer( 40 );
+    timer.play();
+
+    animate();
+
+    function animate() {
+
+        requestAnimationFrame( animate );
+
+         object.position.x = audio.currentTime;
+        object.position.x = timer.currentTime;
+
+    }
+
+</script>
+
+</head>
+<body>
+
+</body>
+</html>

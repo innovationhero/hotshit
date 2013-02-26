@@ -9,3 +9,5 @@ TODO
 - implement IFRAME FOR TORII OAUTH2 SIGNUP AND LOGIN in the extereme left
 - apply ngInfiniteScroll to the reveal section element along with the json data ng service
 http://binarymuse.github.com/ngInfiniteScroll/demo_basic.html
+- make background image of the logo act as  a preloader too in case of content is loading from the server
+- when i type-in the stage "/cam on" the webcam api is activated, when "/cam off" it is disabled
