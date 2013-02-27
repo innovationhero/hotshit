@@ -2,18 +2,16 @@
 
 /* Services */
 
-// this is a chance to all ideas to shine!
-// Demonstrate how to register services
-// In this case it is a simple value service.
+// ############## End of Angular Doc Notes  ###############
+/**As part of angular DI, to register a service must first have a module that this service will be part of. then afterwards, we can register this service to this module either via  Module api or by using the $provide service in the module configuration function.for our purposes we will use the Module api way as it seems neater to my eye.
 
 
+All services in Angular are instantiated lazily. This means that a service will be created only when it is needed for instantiation of a service or an application component that depends on it. In other words, Angular won't instantiate services unless they are requested directly or indirectly by the application.
 
+ it is important to realize that all Angular services are application singletons. This means that there is only one instance of a given service per injector. Since Angular is lethally allergic to global state, it is possible to create multiple injectors, each with its own instance of a given service, but that is rarely needed, except in tests where this property is crucially important.
+**/
 
-// angular.module('myApp.services', []).value('version', '0.1');
-
-
-// As part of angular DI, to register a service must first have a module that this service will be part of. then afterwards, we can register this service to this module either via  Module api or by using the $provide service in the module configuration function.for our purposes we will use the Module api way as it seems neater to my eye.
-
+// ############## End of Angular Doc Notes  ###############
 
 /**
  * ### endpointService
@@ -128,13 +126,6 @@ angular.module('endpointService', ['ngResource','EndpointHelper'])
     // The factory function returns CatsService, which is injected into controllers.
     return CatsService;
 });
-
-/**
-All services in Angular are instantiated lazily. This means that a service will be created only when it is needed for instantiation of a service or an application component that depends on it. In other words, Angular won't instantiate services unless they are requested directly or indirectly by the application.
-
- it is important to realize that all Angular services are application singletons. This means that there is only one instance of a given service per injector. Since Angular is lethally allergic to global state, it is possible to create multiple injectors, each with its own instance of a given service, but that is rarely needed, except in tests where this property is crucially important.
-**/
-
 
 
 
