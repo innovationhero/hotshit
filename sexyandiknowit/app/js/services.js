@@ -131,7 +131,7 @@ angular.module('endpointService', ['ngResource','EndpointHelper'])
 
 
 /**
- * ### CatServiceHelper
+ * ### CatServiceHelper must change this
  *
  * This module is basically a translator for data retrieved by CatService.
  * The Petfinder API was originally set up to communicate via XML, and they added
