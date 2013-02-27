@@ -28,20 +28,22 @@ angular.module('endpointService', ['ngResource','EndpointHelper'])
     /**
      * Private vars
      */
-    // Set the max number of cats to retrieve from the Petfinder API
-    var numberOfCatsToGet = 200;
+    // Set the max number of ideas to retrieve from the JSON through the ngResource
+    var numberOfIdeasToGet = 2;
 
-    // Set up the $resource injectable to use the Petfinder API. Some custom options are used in the $resource.query method
-    var remoteSvc = $resource('/jsCats/ngCats/proxy.php', {count:numberOfCatsToGet,offset:0},
-                { query: {
-                      method:'GET',
-                      params:{action:'shelter.getPets',count:numberOfCatsToGet, offset:0},
-                      isArray:true
-                     }
-                });
+// ===================================================
+    // Set up the $resource injectable to use the data source(Ruby Server API). Some custom options are used in the $resource.query method
+ //   var remoteSvc = $resource('/jsCats/ngCats/proxy.php', {count:numberOfCatsToGet,offset:0},
+  //              { query: {
+   //                   method:'GET',
+    //                  params:{action:'shelter.getPets',count:numberOfCatsToGet, offset:0},
+    //                  isArray:true
+     //                }
+      //          });
+// ===================================================
 
-    // Use the cats.json file as the $resource, if necessary
-    var localSvc = $resource('cats.json',{});
+    // Use  the local JSON file - data.json as the $resource, if necessary
+    var localSvc = $resource('data.json',{});
 
     // Decide which $resource to use as the actual service
     var service = (ENDPOINT === "LOCAL") ? localSvc : remoteSvc;
