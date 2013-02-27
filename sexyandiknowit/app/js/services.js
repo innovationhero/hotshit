@@ -6,8 +6,17 @@
 // Demonstrate how to register services
 // In this case it is a simple value service.
 
+
+
+
+// angular.module('myApp.services', []).value('version', '0.1');
+
+
+// As part of angular DI, to register a service must first have a module that this service will be part of. then afterwards, we can register this service to this module either via  Module api or by using the $provide service in the module configuration function.for our purposes we will use the Module api way as it seems neater to my eye.
+
+
 /**
- * ### APIService
+ * ### endpointService
  *
  * This module contains the service that gets the data used by the application.
  * Depending on how the ENPOINT constant is set, the service will either use
@@ -16,12 +25,7 @@
  */
 
 
-// angular.module('myApp.services', []).value('version', '0.1');
-
-
-// As part of angular DI, to register a service must first have a module that this service will be part of. then afterwards, we can register this service to this module either via  Module api or by using the $provide service in the module configuration function.for our purposes we will use the Module api way as it seems neater to my eye.
-
-angular.module('APIService', ['ngResource','APIServiceHelper'])
+angular.module('endpointService', ['ngResource','EndpointHelper'])
 .factory('CatsService', function($resource,$filter,$routeParams,CatServiceHelper,ENDPOINT){
     /**
      * Private vars
