@@ -74,6 +74,7 @@ angular.module('endpointService', ['ngResource','EndpointHelper'])
         }
       },
 
+
       /**
        * ### Service Methods
        */
