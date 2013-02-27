@@ -20,11 +20,9 @@
  *
  * This module contains the service that gets the data used by the application.
  * Depending on how the ENPOINT constant is set, the service will either use
- * the Petfinder API to dynamically retrieve data, or it will read a file (cats.json)
+ * the Ruby Server API to dynamically retrieve data, or it will read a file (data.json)
  * stored locally on disk.
  */
-
-
 angular.module('endpointService', ['ngResource','EndpointHelper'])
 .factory('CatsService', function($resource,$filter,$routeParams,CatServiceHelper,ENDPOINT){
     /**
