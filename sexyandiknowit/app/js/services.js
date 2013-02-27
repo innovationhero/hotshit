@@ -31,17 +31,6 @@ angular.module('endpointService', ['ngResource','EndpointHelper'])
     // Set the max number of ideas to retrieve from the JSON through the ngResource
     var numberOfIdeasToGet = 2;
 
-// ===================================================
-    // Set up the $resource injectable to use the data source(Ruby Server API). Some custom options are used in the $resource.query method
- //   var remoteSvc = $resource('/jsCats/ngCats/proxy.php', {count:numberOfCatsToGet,offset:0},
-  //              { query: {
-   //                   method:'GET',
-    //                  params:{action:'shelter.getPets',count:numberOfCatsToGet, offset:0},
-    //                  isArray:true
-     //                }
-      //          });
-// ===================================================
-
     // Use  the local JSON file - data.json as the $resource, if necessary
     var localSvc = $resource('data.json',{});
 
