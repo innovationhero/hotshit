@@ -24,7 +24,7 @@
  * stored locally on disk.
  */
 angular.module('endpointService', ['ngResource','EndpointHelper'])
-.factory('CatsService', function($resource,$filter,$routeParams,CatServiceHelper,ENDPOINT){
+.factory('IdeasService', function($resource,$filter,$routeParams,CatServiceHelper,ENDPOINT){
     /**
      * Private vars
      */
