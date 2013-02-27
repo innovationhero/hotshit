@@ -163,7 +163,7 @@ angular.module('CatServiceHelper',[])
     }
   };
 
-  // Concats the breeds into a single string.
+  // Concats the breeds into a single string. must change this
   var getBreeds = function getBreeds(breeds) {
     var breedName = "";
     if(angular.isArray(breeds.breed)) {
