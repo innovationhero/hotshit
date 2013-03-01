@@ -1,4 +1,5 @@
 {
+{
   "name": "test", 
   "children":[
     {"data": "val1" }, 
@@ -6,9 +7,15 @@
     {"data": "val3" }, 
     {"data": "val4" }, 
     {"data": "val5" }
-  ],
-"name": "test2",
-"children":[
-{"data":"val1"}
+  ]
+}
+{ 
+ "name": "ideaid2",
+ "children":[
+  {"data": "sourcevalue"},
+  {"data": "sourcevalue2"},
+  {"data": "sourcevalue3"},
+  {"data": "sourcevalue4"}
 ]
+}
 }
