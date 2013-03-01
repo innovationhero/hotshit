@@ -1,0 +1,95 @@
+2010-01-13  SATOH Hiroh <cho45@lowreal.net>
+
+	* Remove method_missing:
+	Defining method_missing produce big side-effects.
+	(eg. no error on undefined values)
+
+2009-10-11  SATOH Hiroh <cho45@lowreal.net>
+
+	* [new]
+		Implemented Server#sessions which returns all sessions connected to
+		the server.
+	* Released 0.0.9
+
+2009-08-08  SATOH Hiroh <cho45@lowreal.net>
+
+	* [bug]:
+		Fixed to work on ruby1.9.1 (now can send iso-2022-jp)
+	* [new]
+		Implemented Message#ctcps returns embedded all ctcp messages (drry).
+	* Released 0.0.8
+
+2009-02-19  SATOH Hiroh <cho45@lowreal.net>
+
+	* [bug]:
+		Fixed net/irc.rb permission.
+	* Released 0.0.7
+
+2009-02-01  SATOH Hiroh <cho45@lowreal.net>
+
+	* [bug]:
+		Fixed to work on ruby1.9.1
+	* [release]:
+		Released 0.0.6
+
+2008-07-06  SATOH Hiroh <cho45@lowreal.net>
+
+	* [interface]:
+		Removed around @channels and separeted to
+		Net::IRC::Client::ChannelManager as just a sample of managing
+		channels.
+	* [release]:
+		Released 0.0.5
+
+2008-07-06 Satoshi Nakagawa <psychs@limechat.net>
+
+	* [new]:
+		Added a mode parser which can be configured automatically from 005 replies.
+
+2008-06-28 cho45
+
+	* [interface]:
+		Change mode character to symbol.
+	* [new]:
+		Seperate each class to some files.
+	* [release]:
+		Released 0.0.4
+
+2008-06-14 cho45
+
+	* [bug]:
+		Fixed examples. (twitter, wassr, lingr gateways)
+	* [release]:
+		Released 0.0.3
+
+2008-02-06 cho45
+
+	* [release] @5832:
+		Released 0.0.2
+
+
+2008-02-01 cho45
+
+	* [bug] @5986:
+		Fixed to destroy closed stream.
+
+2008-01-31 cho45
+
+	* [new] @5939:
+		Added client example.
+
+	* [new] @5929:
+		Updated tests.
+		Made allow lame prefix in RPL_WELCOME (like freenode) 
+
+2008-01-29 cho45
+
+	* [bug] @5846:
+		athack つかわないときの処理がもろに間違ってた。
+
+	* [bug] @5843:
+		Net::IRC::Server の修正に追従できていなかった
+
+	* [release] @5832:
+		Released 0.0.1
+

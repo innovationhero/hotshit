@@ -14,15 +14,17 @@ All services in Angular are instantiated lazily. This means that a service will 
 // ############## End of Angular Doc Notes  ###############
 
 /**
- * ### endpointService
+ * ### endpoint
  *
  * This module contains the service that gets the data used by the application.
  * Depending on how the ENPOINT constant is set, the service will either use
  * the Ruby Server API to dynamically retrieve data, or it will read a file (data.json)
  * stored locally on disk.
  */
-angular.module('endpointService', ['ngResource','EndpointHelper'])
-.factory('IdeasService', function($resource,$filter,$routeParams,CatServiceHelper,ENDPOINT){
+
+ // the factory
+angular.module('endpoint', ['ngResource','EndpointHelper'])
+.factory('IdeaService', function($resource,$filter,$routeParams,EndpointHelper,ENDPOINT){
     /**
      * Private vars
      */
@@ -33,16 +35,16 @@ angular.module('endpointService', ['ngResource','EndpointHelper'])
     var localSvc = $resource('data.json',{});
 
     // Decide which $resource to use as the actual service
-    var service = (ENDPOINT === "LOCAL") ? localSvc : remoteSvc;
+   //  var service = (ENDPOINT === "LOCAL") ? localSvc : remoteSvc;
 
     // Private properties & methods used to store data shared between controllers
-    var _cats = [];
-    var _activeCatIndex = -1;
-    var _setActiveCat = function _setActiveCat(catId,callback) {
-                          var cat = CatsService.findCatInCollection(catId);
-                          if (cat) {
-                            _activeCatIndex = _cats.indexOf(cat);
-                            callback(cat);
+    var _ideas = [];
+    var _activeIdeaIndex = -1;
+    var _setActiveIdea = function _setActiveIdea(ideaId,callback) {
+                          var idea = IdeaService.findIdeaInCollection(ideaId);
+                          if (idea) {
+                            _activeIdeaIndex = _ideas.indexOf(idea);
+                            callback(idea);
                           }
                         };
 

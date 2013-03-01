@@ -1,0 +1,91 @@
+
+= net-irc
+
+
+== Description
+
+IRC library. This is mostly conform to RFC 1459 but partly not for convenience.
+
+
+== Installation
+
+=== Archive Installation
+
+	rake install
+
+=== Gem Installation
+
+	gem install net-irc
+
+
+== Features/Problems
+
+* IRC client (for bot)
+* IRC server (for gateway to webservices)
+
+== Synopsis
+
+=== Client
+
+	require "net/irc"
+
+	class SimpleClient < Net::IRC::Client
+		def on_privmsg(m)
+			super
+			channel, message = *m
+			if message =~ /Hello/
+				post NOTICE, channel, "Hello!"
+			end
+		end
+	end
+
+Net::IRC::Client manages channel status and the information is set in @channels.
+So, be careful to use @channels instance variable and call super surely.
+
+=== Server
+
+see example/tig.rb
+
+
+== IRC Gateways
+
+There are some gateways connecting to webservices.
+
+* Twitter
+* Wassr
+* Hatena Haiku
+* Hatena Star
+
+If you want to run it, type following:
+
+	$ cd `ruby -rubygems -e 'print Gem.searcher.find("net/irc").full_gem_path+"/examples"'`
+
+Twitter:
+	$ ./tig.rb -f >> /dev/null 2>&1
+
+Wassr:
+	$ ./wig.rb
+
+Run as daemon in default. If you want to help:
+
+	$ ./tig.rb --help
+	Usage: tig.rb [opts]
+	
+	
+	Options:
+	    -p, --port [PORT=16668]          port number to listen
+	    -h, --host [HOST=localhost]      host name or IP address to listen
+	    -l, --log LOG                    log file
+	        --debug                      Enable debug mode
+	    -f, --foreground                 run foreground
+	    -n [user name or email address]
+	        --name
+
+
+== Copyright
+
+This library is based on RICE <http://arika.org/ruby/rice> written by akira yamada.
+
+Author::    cho45 <cho45@lowreal.net>
+Copyright:: Copyright (c) 2008-2009 cho45
+License::   Ruby's

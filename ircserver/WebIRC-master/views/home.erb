@@ -1,0 +1,212 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+            "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>WebIRC</title>
+  <link rel="alternate" type="application/rss+xml" title="URI catcher" href="rss" charset="utf-8">
+  <link rel="stylesheet" href="styles/style.css" type="text/css" media="screen" charset="utf-8">
+  <script src="scripts/prototype.js" type="text/javascript" charset="utf-8"></script>
+  <script src="scripts/cookie.js" type="text/javascript" charset="utf-8"></script>
+  <script src="scripts/date.js" type="text/javascript" charset="utf-8"></script>
+  <script src="scripts/ajax.js" type="text/javascript" charset="utf-8"></script>
+  <script src="scripts/script.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body onload="init()" onkeydown="return detect_global_keypress(event)">
+  <div class="lucidia" id="disclaimer">Please Wait, retrieving IRC session history...</div>
+  <div id="irc_client">
+    <div class="table header lucidia regular">
+      <div class="row">
+        <div class="tiny cell github_link">
+          <a href="https://github.com/andyherbert/WebIRC/tree" target="_blank">Fork me on GitHub</a>
+        </div>
+        <div class="cell">
+          <div id="title_text">
+            Web IRC
+          </div>
+        </div>
+        <div class="cell clickable key" onclick="do_key()">
+          
+        </div>
+      </div>
+    </div>
+    <div class="table info">
+      <div class="row info_gap"></div>
+      <div class="row">
+        <div class="topic_sidebar"></div>
+        <div id="topic" class="cell lucidia small">
+          Create a new connection
+        </div>
+        <div class="topic_sidebar"></div>
+      </div>
+      <div class="row info_gap"></div>
+    </div>
+    <div class="table">
+      <div class="row">
+        <div class="cell sidebar connections">
+          <div id="connections" class="sidebar scrollable lucidia regular">
+            <div onclick="change_to()" class="clickable header add_server with_hover">Connect to server...</div>
+          </div>
+        </div>
+        <div class="cell activity_container">
+          <div id="new_connection" class="lucidia regular scrollable">
+            <div class="ui_header">Connect to Server</div>
+            <form id="new_connection_form" onsubmit="new_connection(); return false;" action="" accept-charset="utf-8">
+              <div class="field_element">
+                <div class="field_name">IRC server:</div>
+                <div class="field_container">
+                  <input class="lucidia regular field_entry" type="text" name="" value="irc.freenode.net" id="server_name">
+                </div>
+              </div>
+              <div class="field_element">
+                <div class="field_name">IRC server port:</div>
+                <div class="field_container">
+                  <input class="lucidia regular field_entry narrow" type="text" name="" value="6667" id="server_port">
+                </div>
+              </div>
+              <div class="field_element">
+                <div class="field_name">Nickname:</div>
+                <div class="field_container">
+                  <input class="lucidia regular field_entry" type="text" name="" value="<%=config("nickname") or "JohnQ"%>" id="nickname">
+                </div>
+              </div>
+              <div class="field_element">
+                <div class="field_name">Username:</div>
+                <div class="field_container">
+                  <input class="lucidia regular field_entry" type="text" name="" value="<%=config("user_name") or "john_q"%>" id="user_name">
+                </div>
+              </div>
+              <div class="field_element">
+                <div class="field_name">Real name:</div>
+                <div class="field_container">
+                  <input class="lucidia regular field_entry" type="text" name="" value="<%=config("real_name") or "John Q Public"%>" id="real_name">
+                </div>
+              </div>
+              <div class="field_element">
+                <div class="field_name">Server password:</div>
+                <div class="field_container">
+                  <input class="lucidia regular field_entry" type="password" name="" value="" id="password">
+                </div>
+              </div>
+              <div class="clickable header connect_button with_hover" onclick="new_connection()">
+                Connect
+              </div>
+            </form>
+          </div>
+          <div id="activity" class="scrollable lucidia regular hide"></div>
+        </div>
+        <div class="cell">
+          <div id="users" class="sidebar users scrollable lucidia small">
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="table info lucidia small">
+      <div class="row info_gap"></div>
+      <div class="row">
+        <div class="cell">
+          <div id="activity_info" class="">
+            
+          </div>
+        </div>
+      </div>
+      <div class="row info_gap"></div>
+    </div>
+    <div class="table footer">
+      <div class="row">
+        <div class="cell sidebar lucidia regular footer_nick_prompt" id="nick_prompt"></div>
+        <div class="cell input_gap"></div>
+        <div class="cell">
+          <form id="input" onkeydown="return detect_tab_completion(event)" onsubmit="send_msg(msg.value); msg.value = ''; return false;" action="" accept-charset="utf-8">
+            <div id="input_container">
+              <input class="lucidia regular" type="text" value="" id="msg" maxlength="256">
+            </div>
+          </form>
+        </div>
+        <div class="cell input_gap right">
+          <div onclick="do_host_file()" class="lucidia tiny clickable header upload_button with_hover">
+            Host file...
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="shadow"></div>
+  <div id="reference" class="lucidia regular">
+    <div class="table">
+      <div class="row shortcut_entity">
+        <div class="cell title">
+          Complete nickname (repeat to cycle):
+        </div>
+        <div class="cell">
+          <div class="key">&#x21E5;</div>
+        </div>
+        <div class="cell title">
+          Browse input history:
+        </div>
+        <div class="cell">
+          <div class="key">&#x2191;</div>
+          <div class="operator">or</div>
+          <div class="key">&#x2193;</div>
+        </div>
+      </div>
+      <div class="row shortcut_entity">
+        <div class="cell title">
+          Move to the previous/next window:
+        </div>
+        <div class="cell">
+          <div class="key">ctrl</div>
+          <div class="operator">+</div>
+          <div class="key">&#x2191;</div>
+          <div class="operator">or</div>
+          <div class="key">&#x2193;</div>
+        </div>
+        <div class="cell title">
+          Move to the previous/next server:
+        </div>
+        <div class="cell">
+          <div class="key">ctrl</div>
+          <div class="operator">+</div>
+          <div class="key">&#x2190;</div>
+          <div class="operator">or</div>
+          <div class="key">&#x2192;</div>
+        </div>
+      </div>
+      <div class="row shortcut_entity">
+        <div class="cell title">
+          Move to the server log for the current window:
+        </div>
+        <div class="cell">
+          <div class="key">ctrl</div>
+          <div class="operator">+</div>
+          <div class="key">&#x232B;</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="key_requester" class="key_requester lucidia regular hide">
+    <form id="set_password" onsubmit="ok_key_requester(this.web_user.value, this.web_pass_1.value, (this.web_pass_1.value == this.web_pass_2.value)); return false;" action="" accept-charset="utf-8">
+      <div class="field_name">User name:</div>
+      <div id="" class="field_container">
+        <input class="lucidia regular field_entry" type="text" name="" value="<%=config("web_user") or ""%>" id="web_user">
+      </div>
+      <div class="field_name">Password:</div>
+      <div class="field_container">
+        <input class="lucidia regular field_entry" type="password" name="" value="<%=config("web_password") or ""%>" id="web_pass_1">
+      </div>
+      <div class="field_name">Re-enter password:</div>
+      <div class="field_container">
+        <input class="lucidia regular field_entry" type="password" name="" value="<%=config("web_password") or ""%>" id="web_pass_2">
+      </div>
+      <div onclick="ok_key_requester(this.parentNode.web_user.value, this.parentNode.web_pass_1.value, (this.parentNode.web_pass_1.value == this.parentNode.web_pass_2.value))" class="clickable header with_hover requester_button ok_button">
+        Set password
+      </div>
+      <div onclick="cancel_key_requester()" class="clickable header with_hover requester_button cancel_button">
+        Cancel
+      </div>
+    </form>
+  </div>
+</body>
+</html>
