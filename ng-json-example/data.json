@@ -6,5 +6,9 @@
     {"data": "val3" }, 
     {"data": "val4" }, 
     {"data": "val5" }
-  ]
+  ],
+"name": "test2",
+"children":[
+{"data":"val1"}
+]
 }
