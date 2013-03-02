@@ -22,11 +22,15 @@ window.oneIdeaJson = {
 };
 
 
+  // testing 	
+//  $scope.jsontest = window.oneIdeaJson.frags[2].src;
+ // console.log($scope.jsontest);
 
-  $scope.jsontest = window.oneIdeaJson.frags[2].src;
 
-   console.log($scope.jsontest);
 
+//$scope.jd = data.ideas[1].id;   
+ $scope.jd = data.ideas[2].frags[1].src;
+console.log($scope.jd);
 
 //TODO make a multi idea json with paging functionality too
 
