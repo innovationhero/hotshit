@@ -12,26 +12,23 @@ window.oneIdeaJson = {
 	"id": "12345678",
 	"tile": "ideaTitle",
 	"registered": true,
-	"frags": {
-		"frag": {"src": "httpvideosource","type": "video"},
-		"frag": {"src": "httpimgsource", "type": "img"},
-		"frag": {"src": "httpaudiosource","type": "audio"},
-		"frag": {"src": "httptxtsource","type": "txt"}
-	} 
+	"frags": [
+		{"src": "httpvideosource","type": "video"},
+		{"src": "httpimgsource", "type": "img"},
+		{"src": "httpaudiosource","type": "audio"},
+		{"src": "httptxtsource","type": "txt"},
+		{"src": "someanotherhttpvideosource","type": "video"}
+	]
 };
 
 
 
-  $scope.jsontest = window.oneIdeaJson.frags.frag.src;
+  $scope.jsontest = window.oneIdeaJson.frags[2].src;
 
    console.log($scope.jsontest);
 
 
 //TODO make a multi idea json with paging functionality too
-
-// var idea = cope.resource = new myResource(window.somePreloadedJson);
-
-// src =  myIdea.["frags"].["frag"].["src"]
 
   });
 });
