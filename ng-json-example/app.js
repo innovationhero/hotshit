@@ -2,16 +2,27 @@ var app = angular.module('angularjs-starter', ['jsonService']);
 
 app.controller('MainCtrl', function($scope, JsonService) {
   JsonService.get(function(data){
-   // for each on the data object to store diff ideas
-   // for idea in data do
- 	
-   // $scope.name = data.name;
-   // $scope.children = data.children;
-    $scope.data = data; 	
-    angular.forEach(data.idea){
-	$scope.id = idea.id;
-	$scope.frag = idea.frag;
-	};
+
+// var idea = {}; //emty idea object 
+// var ideas = []; // emty array of ideas 
+	
+	 console.log(data[0].id),
+	console.log(data[0].frag)
+
+
+// Idea to be posted
+myIdea = {
+	"id": ideaID,
+	"tile": "ideaTitle",
+	"registered": true,
+	"frags": {
+		"frag": {"src": "httpvideosource","type": "video"},
+		"frag": {"src": "httpimgsource", "type": "img"},
+		"frag": {"src": "audiosource","type": "audio"},
+		"frag": {"src": "txtsource","type": "txt"}
+	} 
+}
+// myIdea.["frag"].video
 
   });
 });
