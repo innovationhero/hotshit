@@ -11,16 +11,18 @@
     <script src="http://code.angularjs.org/1.0.3/angular-resource.js"></script>
    
  <link type="text/css" rel="Stylesheet" href="http://www.smartjava.org/examples/copypaste/bjqs.css" />
- <link rel="stylesheet" href="style.css">
+ <link rel="stylesheet" href="style.css"/>
  
 
     <script>
       document.write('<base href="' + document.location + '" />');
     </script>
+
+
     <script src="services.js"></script>
 
     <script class="secret-source">
-        jQuery(document).ready(function($) {
+        $(document).ready(function($) {
 
           $('#banner-fade').bjqs({
             height      : 320,
@@ -36,7 +38,6 @@
   </head>
   
   <body ng-controller="MainCtrl">
-    <code>
       {{iC}}
     </code>
     <h2>ideas frags</h2>
@@ -76,8 +77,6 @@
       <div ng-repeat="frag in idea.frags">
 <iframe width="560" height="315" src= {{frag.src}}
 frameborder="0" allowfullscreen></iframe>
-
-
       </div>
     </div>
 
