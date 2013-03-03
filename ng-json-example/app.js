@@ -30,8 +30,14 @@ window.oneIdeaJson = {
 
 //$scope.jd = data.ideas[1].id;   
 // $scope.jd = data.ideas[2].frags[1].src;
-$scope.jd = data.ideas.length; // the length of the json ideas array to be used for looping
-console.log($scope.jd);
+//$scope.jd = data.ideas.length; // the length of the json ideas array to be used for looping
+// console.log($scope.jd);
+
+var fin = data.ideas.length; //fetchedIdeasNumber = fin
+while (fin--) {
+console.log("the number of the fetched idea " + fin);
+console.log(data.ideas[fin].title);
+} 
 
 //TODO make a multi idea json with paging functionality too
 

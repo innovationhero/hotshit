@@ -2,7 +2,7 @@
 
  {
           "id": "1",
-         "tile": "ideaTitle",
+         "title": "ideaTitle1",
          "registered": true,
          "frags": [
                  {"src": "httpvideosource","type": "video"},
@@ -16,7 +16,7 @@
 
  {
           "id": "2",
-         "tile": "ideaTitle",
+         "title": "ideaTitle2",
          "registered": true,
          "frags": [
                  {"src": "httpvideosource","type": "video"},
@@ -30,7 +30,7 @@
 
  {
           "id": "3",
-         "tile": "ideaTitle",
+         "title": "ideaTitle3",
          "registered": true,
          "frags": [
          {"src": "httpimgsourcegamedaw", "type": "img"},
