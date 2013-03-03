@@ -34,12 +34,22 @@ window.oneIdeaJson = {
 // console.log($scope.jd);
 
 var fin = data.ideas.length; //fetchedIdeasNumber = fin
+var iC = [] // ideaCollection is iC
+
 while (fin--) {
 console.log("the number of the fetched idea " + fin);
 console.log(data.ideas[fin].title);
+iC.push(data.ideas[fin]);
+console.log("idea collection length ya prince " + iC.length);
 } 
 
+console.log("idea collection length ya prince " + iC.length);
+ 
+console.log("idea collection length ya prince " + iC[1].title); 
 //TODO make a multi idea json with paging functionality too
+
+
+
 
   });
 });
