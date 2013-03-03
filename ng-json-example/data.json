@@ -8,7 +8,9 @@
                  {"src": "httpvideosrcfrom1stidea","type": "video"},
                  {"src": "httpimgsrcfrom1stidea", "type": "img"},
                  {"src": "httpaudiosrcfrom1stidea","type": "audio"},
-                 {"src": "httptxtsrcfrom1stidea","type": "txt"},  
+            {"src": "httptxtsrcfrom1stidea","type": "txt"},  
+                 {"src": "httpaudiosrcfrom1stidea","type": "audio"},
+                 {"src": "httpaudiosrcfrom1stidea","type": "audio"},
         {"src": "someanotherhttpvideofrom1stidea","type": "video"}
          ]
  },    
@@ -23,7 +25,11 @@
                  {"src": "httpimgsourcefrom2ndidea", "type": "img"},
                  {"src": "httpaudiosrcfrom2ndidea","type": "audio"},
                  {"src": "httptxtsrcfrom2ndidea","type": "txt"},    
-    {"src": "someanotherhttpvideosrcfrom2ndidea","type": "video"}
+                 {"src": "httpaudiosrcfrom1stidea","type": "audio"},
+                 {"src": "httpaudiosrcfrom1stidea","type": "audio"},
+                 {"src": "httpaudiosrcfrom1stidea","type": "audio"},
+                 {"src": "httpaudiosrcfrom1stidea","type": "audio"},
+    {"src": "http://www.youtube.com/embed/2L_cGjQSR80" ,"type": "video"}
          ]
  },    
    

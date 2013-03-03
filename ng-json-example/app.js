@@ -30,7 +30,7 @@ console.log("idea collection length ya prince " + iC.length);
 } 
 
 $scope.iC = iC;
-$scope.frags = iC.frags;
+//$scope.frags = iC.frags;
 console.log("idea collection length ya prince " + iC.length);
  
 console.log("idea collection length ya prince " + iC[1].frags[0].type); //for each in frags show in the html page through the $scope 
