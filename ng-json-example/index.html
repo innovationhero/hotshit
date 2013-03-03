@@ -25,10 +25,13 @@
     </code>
     <hr />
     <h2>ideas frags</h2>
+   
     <div ng-repeat="idea in iC">
-     <div ng-repeat="frags in idea">
-	 {{idea.frags[0].src}}
+      <div ng-repeat="frag in idea.frags">
+	 {{frag.src}}
+      </div>
     </div>
-  </body>
+ 
+ </body>
 
 </html>
