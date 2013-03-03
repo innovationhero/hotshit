@@ -7,21 +7,7 @@ app.controller('MainCtrl', function($scope, JsonService) {
 // var ideas = []; // emty array of ideas 	
 //	 console.log(data[0].id),
 //	console.log(data[0].frag)
-
-window.oneIdeaJson = {
-	"id": "12345678",
-	"tile": "ideaTitle",
-	"registered": true,
-	"frags": [
-		{"src": "httpvideosource","type": "video"},
-		{"src": "httpimgsource", "type": "img"},
-		{"src": "httpaudiosource","type": "audio"},
-		{"src": "httptxtsource","type": "txt"},
-		{"src": "someanotherhttpvideosource","type": "video"}
-	]
-};
-
-
+	
   // testing 	
 //  $scope.jsontest = window.oneIdeaJson.frags[2].src;
  // console.log($scope.jsontest);
@@ -43,6 +29,8 @@ iC.push(data.ideas[fin]);
 console.log("idea collection length ya prince " + iC.length);
 } 
 
+$scope.iC = iC;
+$scope.frags = iC.frags;
 console.log("idea collection length ya prince " + iC.length);
  
 console.log("idea collection length ya prince " + iC[1].frags[0].type); //for each in frags show in the html page through the $scope 

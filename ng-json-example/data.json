@@ -5,11 +5,11 @@
          "title": "ideaTitle1",
          "registered": true,
          "frags": [
-                 {"src": "httpvideosource","type": "video"},
-                 {"src": "httpimgsource", "type": "img"},
-                 {"src": "httpaudiosource","type": "audio"},
-                 {"src": "httptxtsource","type": "txt"},  
-        {"src": "someanotherhttpvideosource","type": "video"}
+                 {"src": "httpvideosrcfrom1stidea","type": "video"},
+                 {"src": "httpimgsrcfrom1stidea", "type": "img"},
+                 {"src": "httpaudiosrcfrom1stidea","type": "audio"},
+                 {"src": "httptxtsrcfrom1stidea","type": "txt"},  
+        {"src": "someanotherhttpvideofrom1stidea","type": "video"}
          ]
  },    
    
@@ -19,11 +19,11 @@
          "title": "ideaTitle2",
          "registered": true,
          "frags": [
-                 {"src": "httpvideosource","type": "video"},
-                 {"src": "httpimgsource", "type": "img"},
-                 {"src": "httpaudiosource","type": "audio"},
-                 {"src": "httptxtsource","type": "txt"},    
-    {"src": "someanotherhttpvideosource","type": "video"}
+                 {"src": "httpvideosrcfrom2ndidea","type": "video"},
+                 {"src": "httpimgsourcefrom2ndidea", "type": "img"},
+                 {"src": "httpaudiosrcfrom2ndidea","type": "audio"},
+                 {"src": "httptxtsrcfrom2ndidea","type": "txt"},    
+    {"src": "someanotherhttpvideosrcfrom2ndidea","type": "video"}
          ]
  },    
    
@@ -33,10 +33,10 @@
          "title": "ideaTitle3",
          "registered": true,
          "frags": [
-         {"src": "httpimgsourcegamedaw", "type": "img"},
-         {"src": "httpaudiosource","type": "audio"}, 
-         {"src": "httptxtsource","type": "txt"},
-         {"src": "someanotherhttpvideosource","type": "video"}
+         {"src": "httpimgsourcefrom3rdidea", "type": "img"},
+         {"src": "httpaudiosrcfrom3rdidea","type": "audio"}, 
+         {"src": "httptxtsourcefrom3rdidea","type": "txt"},
+         {"src": "someanotherhttpvideosourcefrom3rdidea","type": "video"}
          ]
  }    
    

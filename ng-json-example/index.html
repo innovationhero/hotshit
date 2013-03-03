@@ -17,16 +17,17 @@
   
   <body ng-controller="MainCtrl">
     <code>
-      {{name}}
+      {{iC}}
     </code>
     <hr />
     <code>
       {{children | json}}
     </code>
     <hr />
-    <h2>children</h2>
-    <div ng-repeat="child in children">
-      {{child.data}}
+    <h2>ideas frags</h2>
+    <div ng-repeat="idea in iC">
+     <div ng-repeat="frags in idea">
+	 {{idea.frags[0].src}}
     </div>
   </body>
 
