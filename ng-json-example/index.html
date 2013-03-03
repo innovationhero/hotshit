@@ -3,14 +3,34 @@
   
   <head lang="en">
     <meta charset="utf-8">
-    <title>Custom Plunker</title>
+    <title>big ass world</title>
+<script src="http://basic-slider.com/js/bjqs-1.3.min.js"></script>
+
+   <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular.js"></script>
     <script src="http://code.angularjs.org/1.0.3/angular-resource.js"></script>
-    <link rel="stylesheet" href="style.css">
+   
+ <link type="text/css" rel="Stylesheet" href="http://www.smartjava.org/examples/copypaste/bjqs.css" />
+ <link rel="stylesheet" href="style.css">
+ 
+
     <script>
       document.write('<base href="' + document.location + '" />');
     </script>
     <script src="services.js"></script>
+
+    <script class="secret-source">
+        jQuery(document).ready(function($) {
+
+          $('#banner-fade').bjqs({
+            height      : 320,
+            width       : 620,
+            responsive  : true
+          });
+
+        });
+     </script>
+   
     <script src="app.js"></script>
     
   </head>
@@ -19,12 +39,38 @@
     <code>
       {{iC}}
     </code>
-    <hr />
-    <code>
-      {{children | json}}
-    </code>
-    <hr />
     <h2>ideas frags</h2>
+
+
+<div id="my-slideshow">
+    <ul class="bjqs">
+        <li> Any content you like </li>
+        <li>"Can go inside these slides"</li>
+    </ul>
+</div>
+
+
+         <!--  Outer wrapper for presentation only, this can be anything you like -->
+      <div id="banner-fade">
+
+        <!-- start Basic Jquery Slider -->
+        <ul class="bjqs">
+        </ul>
+        <!-- end Basic jQuery Slider -->
+
+      <div class="span12" id="slider">
+                    <ul class="bjqs">
+                      <li><img src="http://basic-slider.com/img/banner01.jpg" title="Automatically generated caption"></li>
+                      <li><img src="img/banner02.jpg" title="Automatically generated caption"></li>
+                      <li><img src="img/banner03.jpg" title="Automatically generated caption"></li>
+                    </ul>
+                </div>
+
+      </div>
+      <!-- End outer wrapper -->
+
+
+
    
     <div ng-repeat="idea in iC">
       <div ng-repeat="frag in idea.frags">
@@ -34,6 +80,10 @@ frameborder="0" allowfullscreen></iframe>
 
       </div>
     </div>
+
+
+
+
  
  </body>
 
