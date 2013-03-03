@@ -5,13 +5,13 @@
          "title": "ideaTitle1",
          "registered": true,
          "frags": [
-                 {"src": "httpvideosrcfrom1stidea","type": "video"},
-                 {"src": "httpimgsrcfrom1stidea", "type": "img"},
-                 {"src": "httpaudiosrcfrom1stidea","type": "audio"},
-            {"src": "httptxtsrcfrom1stidea","type": "txt"},  
-                 {"src": "httpaudiosrcfrom1stidea","type": "audio"},
-                 {"src": "httpaudiosrcfrom1stidea","type": "audio"},
-        {"src": "someanotherhttpvideofrom1stidea","type": "video"}
+                 {"src": "idea1frag1","type": "video"},
+                 {"src": "http://www.youtube.com/embed/2L_cGjQSR80" , "type": "img"},
+                 {"src": "idea1frag3","type": "audio"},
+            {"src": "idea1frag4","type": "txt"},  
+                 {"src": "idea1frag5","type": "audio"},
+                 {"src": "idea1frag6","type": "audio"},
+        {"src": "idea1frag7","type": "video"}
          ]
  },    
    
@@ -21,15 +21,15 @@
          "title": "ideaTitle2",
          "registered": true,
          "frags": [
-                 {"src": "httpvideosrcfrom2ndidea","type": "video"},
-                 {"src": "httpimgsourcefrom2ndidea", "type": "img"},
-                 {"src": "httpaudiosrcfrom2ndidea","type": "audio"},
-                 {"src": "httptxtsrcfrom2ndidea","type": "txt"},    
-                 {"src": "httpaudiosrcfrom1stidea","type": "audio"},
-                 {"src": "httpaudiosrcfrom1stidea","type": "audio"},
-                 {"src": "httpaudiosrcfrom1stidea","type": "audio"},
-                 {"src": "httpaudiosrcfrom1stidea","type": "audio"},
-    {"src": "http://www.youtube.com/embed/2L_cGjQSR80" ,"type": "video"}
+                 {"src": "idea2frag1","type": "video"},
+                 {"src": "idea2frag2", "type": "img"},
+                 {"src": "idea2frag3","type": "audio"},
+                 {"src": "idea2frag4","type": "txt"},    
+                 {"src": "idea2frag5","type": "audio"},
+                 {"src": "idea2frag6","type": "audio"},
+                 {"src": "idea2frag7","type": "audio"},
+                 {"src": "idea2frag8","type": "audio"},
+    {"src": "idea2frag9" ,"type": "video"}
          ]
  },    
    
@@ -39,10 +39,10 @@
          "title": "ideaTitle3",
          "registered": true,
          "frags": [
-         {"src": "httpimgsourcefrom3rdidea", "type": "img"},
-         {"src": "httpaudiosrcfrom3rdidea","type": "audio"}, 
-         {"src": "httptxtsourcefrom3rdidea","type": "txt"},
-         {"src": "someanotherhttpvideosourcefrom3rdidea","type": "video"}
+         {"src": "http://www.youtube.com/embed/2L_cGjQSR80", "type": "img"},
+         {"src": "idea3frag2","type": "audio"}, 
+         {"src": "idea3frag3","type": "txt"},
+         {"src": "idea3frag4","type": "video"}
          ]
  }    
    
