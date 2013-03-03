@@ -45,9 +45,8 @@ console.log("idea collection length ya prince " + iC.length);
 
 console.log("idea collection length ya prince " + iC.length);
  
-console.log("idea collection length ya prince " + iC[1].title); 
-//TODO make a multi idea json with paging functionality too
-
+console.log("idea collection length ya prince " + iC[1].frags[0].type); //for each in frags show in the html page through the $scope 
+//TODO make a multi idea json with paging functionality too, it must be a Ruby Server-side pagination to allow genetics being performed on the client side before genetic cycling     
 
 
 
