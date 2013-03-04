@@ -16,6 +16,10 @@
     <script src="app.js"></script>
 
     <script>
+      document.write('<base href="' + document.location + '" />');
+    </script>
+
+    <script>
 	$(function() {
 		$('#slidorion').slidorion({
 			interval: 5000,
@@ -50,34 +54,31 @@
   
   </head>
   
-  <body ng-controller="MainCtrl">
-   
-  <div ng-repeat="idea in iC">
-   <div ng-repeat="frag in idea.frags">
-      
-
+<body ng-controller="MainCtrl">
+<div ng-repeat="idea in iC">
 	<div id="slidorion">
-
 		<div id="slider">
-			<div id="slide1" class="slide">
-				<div class="content">
-					some content 
-	 <iframe width="560" height="315" src= {{frag.src}} frameborder="0" allowfullscreen></iframe>
-				</div>
-			</div>
-
-		<div id="accordion">
-		<div class="link-header"> {{frag.type}} </div>
-			<div class="link-content">
-				<p>{{frag.type}}</p>
-				<p>some shit.</p>
+			<div id="slide1" class="slide">		
+					<div ng-repeat="frag in idea.frags">	
+						<div class="content">
+							 <iframe width="560" height="315" src= {{frag.src}} frameborder="0" allowfullscreen></iframe>
+						</div>
+					</div> 
 			</div>
 		</div>
-	</div>
-      </div>
-    </div>
+		<div id="accordion">
+				<div ng-repeat="frag in idea.frags">
+					<div class="link-header"> {{frag.type}} </div>
+						<div class="link-content">
+							<p>{{frag.src}}</p>
+							<p>some shit.</p>
+						</div>
+					</div>
+				</div>
+		</div>
+	</div>		
 </div>
-</div>
+   
 
  </body>
 </html>

@@ -7,11 +7,7 @@
          "frags": [
                  {"src": "idea1frag1","type": "video"},
                  {"src": "http://www.youtube.com/embed/2L_cGjQSR80" , "type": "img"},
-                 {"src": "idea1frag3","type": "audio"},
-            {"src": "idea1frag4","type": "txt"},  
-                 {"src": "idea1frag5","type": "audio"},
-                 {"src": "idea1frag6","type": "audio"},
-        {"src": "idea1frag7","type": "video"}
+                 {"src": "idea1frag3","type": "audio"}
          ]
  },    
    
@@ -22,13 +18,7 @@
          "registered": true,
          "frags": [
                  {"src": "idea2frag1","type": "video"},
-                 {"src": "idea2frag2", "type": "img"},
-                 {"src": "idea2frag3","type": "audio"},
                  {"src": "idea2frag4","type": "txt"},    
-                 {"src": "idea2frag5","type": "audio"},
-                 {"src": "idea2frag6","type": "audio"},
-                 {"src": "idea2frag7","type": "audio"},
-                 {"src": "idea2frag8","type": "audio"},
     {"src": "idea2frag9" ,"type": "video"}
          ]
  },    
@@ -41,8 +31,7 @@
          "frags": [
          {"src": "http://www.youtube.com/embed/2L_cGjQSR80", "type": "img"},
          {"src": "idea3frag2","type": "audio"}, 
-         {"src": "idea3frag3","type": "txt"},
-         {"src": "idea3frag4","type": "video"}
+         {"src": "idea3frag3","type": "txt"}
          ]
  }    
    
