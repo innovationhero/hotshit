@@ -51,58 +51,33 @@
   </head>
   
   <body ng-controller="MainCtrl">
-  
+   
+  <div ng-repeat="idea in iC">
+   <div ng-repeat="frag in idea.frags">
+      
 
 	<div id="slidorion">
 
 		<div id="slider">
 			<div id="slide1" class="slide">
 				<div class="content">
-					<h1>So you can have some text here...</h1><br /><br /><br /><br /><br /><br />
-					<h3 class="sub">...with a cheeky bit of sub text</h3>
+					some content 
+	 <iframe width="560" height="315" src= {{frag.src}} frameborder="0" allowfullscreen></iframe>
 				</div>
 			</div>
-			<div id="slide2" class="slide">
-				<div class="content">
-					<h1>Then slide some more text in, like this...</h1>
-					<img src="http://www.slidorion.com/img/product-image1.png" />
-				</div>
-			</div>
-			<div id="slide3" class="slide">
-				<div class="content">
-					<h1>Then another product image</h1>
-					<img src="http://www.slidorion.com/img/product-image1.png" />
-				</div>
-			</div>
-		</div>
 
 		<div id="accordion">
-			<div class="link-header">Spiderman</div>
+		<div class="link-header"> {{frag.type}} </div>
 			<div class="link-content">
-				<p>few shit.</p>
+				<p>{{frag.type}}</p>
 				<p>some shit.</p>
-			</div>
-			<div class="link-header">Kick Ass</div>
-			<div class="link-content">
-				<p>few shit.</p>
-				<p>some shit.</p>
-			</div>
-			<div class="link-header">Thor</div>
-			<div class="link-content">
-				<p>paragraph 1</p>
-				<p>more talk shit 2</p>
 			</div>
 		</div>
-
 	</div>
-
-  <h2>ideas frags</h2>
-   
-    <div ng-repeat="idea in iC">
-      <div ng-repeat="frag in idea.frags">
-       <iframe width="560" height="315" src= {{frag.src}} frameborder="0" allowfullscreen></iframe>
       </div>
     </div>
+</div>
+</div>
 
  </body>
 </html>
