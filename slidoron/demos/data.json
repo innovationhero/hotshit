@@ -1,0 +1,38 @@
+{"ideas": [ 
+
+ {
+          "id": "1",
+         "title": "ideaTitle1",
+         "registered": true,
+         "frags": [
+                 {"src": "idea1frag1","type": "video"},
+                 {"src": "http://www.youtube.com/embed/2L_cGjQSR80" , "type": "img"},
+                 {"src": "idea1frag3","type": "audio"}
+         ]
+ },    
+   
+
+ {
+          "id": "2",
+         "title": "ideaTitle2",
+         "registered": true,
+         "frags": [
+                 {"src": "idea2frag1","type": "video"},
+                 {"src": "idea2frag4","type": "txt"},    
+    {"src": "idea2frag9" ,"type": "video"}
+         ]
+ },    
+   
+
+ {
+          "id": "3",
+         "title": "ideaTitle3",
+         "registered": true,
+         "frags": [
+         {"src": "http://www.youtube.com/embed/2L_cGjQSR80", "type": "img"},
+         {"src": "idea3frag2","type": "audio"}, 
+         {"src": "idea3frag3","type": "txt"}
+         ]
+ }    
+   
+]}
