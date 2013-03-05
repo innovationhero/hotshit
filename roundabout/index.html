@@ -8,9 +8,9 @@
 	<script src="angular.min.js"></script>
 	<script src="angular-resource.js"></script>
 
-	<link rel="stylesheet" href="style.css"/>
-  	<link href="roundabout-shapes2.css" rel="stylesheet" />
- 
+<!--	<link rel="stylesheet" href="style.css"/> -->
+ <!-- 	<link href="roundabout-shapes2.css" rel="stylesheet" />
+--> 
 	<script src="services.js"></script>
  	<script src="app.js"></script>
 	<script>
@@ -19,56 +19,60 @@
 
 	<script type="text/javascript" src="jquery.js"></script>
 	<script type="text/javascript" src="jquery.easing.js"></script>
+	<script type="text/javascript" src="jquery.roundabout.js"></script>
 	<script type="text/javascript" src="jquery.roundabout2.js"></script>
 	<script type="text/javascript" src="jquery.roundabout-shapes2.js"></script>
-	<script type="text/javascript" src="roundabout-shapes/v2.js"></script>
-	
+<script src="jquery.event.drag-2.2.js"></script>
+<script src="jquery.event.drop-2.2.js"></script>	
 
 
 	<script>
    $(document).ready(function() {
       $('ul').roundabout({
-         shape: 'rollerCoaster'
-      });
+        shape: 'tearDrop',
+        btnNext: ".next",
+	autoplay: true,
+	autoplayInitialDelay: 7,
+   	 enableDrag: true,
+	autoplayPauseOnHover: true,
+	dropEasing: "swing"
+	   });
    });
 	</script>
-  
+ 
+<style>
+   .roundabout-holder {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      height: 35em;
+      width: 35em;
+   }
+   .roundabout-moveable-item {
+      height: 24em;
+      width: 24em;
+      cursor: pointer;
+      background-color: #ccc;
+      border: 1px solid #999;
+   }
+   .roundabout-in-focus {
+      cursor: auto;
+   }
+</style> 
   </head>
   
 <body ng-controller="MainCtrl">
 
-	<div class="example">
-		<div class="show">
-			<ul id="example-rollerCoaster">
-				<li>1</li>
-				<li>2</li>
-				<li>3</li>
-				<li>4</li>
-				<li>5</li>
-				<li>6</li>
-				<li>7</li>
-				<li>8</li>
-				<li>9</li>
-				<li>10</li>
-				<li>11</li>
-				<li>12</li>
-
-				<li>s1</li>
-				<li>s2</li>
-				<li>s3</li>
-				<li>s4</li>
-				<li>s5</li>
-				<li>s6</li>
-				<li>s7</li>
-				<li>s8</li>
-				<li>s9</li>
-				<li>s10</li>
-				<li>s11</li>
-				<li>s12</li>
+			<ul>
+			
+				<li>what the fuck is going on???? maaaaaaaaaaaaaaaaaaan!</li>
+			
+				<li> <img width="200" height="200"  src="http://mirnazim.org/media/img/content/tagbar.png">
+</li>
+				<li><iframe width="200" height="200" src="http://www.youtube.com/embed/2L_cGjQSR80" frameborder="0" allowfullscreen></iframe></li>
 			</ul>
-		</div>
+<a href="#" class="next">Next</a>
 
-	</div>
 
 <div ng-repeat="idea in iC">
 <div ng-repeat="frag in idea.frags">
