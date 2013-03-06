@@ -1,23 +1,9 @@
-var app = angular.module('angularjs-starter', ['jsonService']);
+var app = angular.module('ekoki', ['ekoki.jsonService','ekoki.rbDirective']);
+
+
 
 app.controller('MainCtrl', function($scope, JsonService) {
   JsonService.get(function(data){
-//TODO update data.json 
-// var idea = {}; //emty idea object 
-// var ideas = []; // emty array of ideas 	
-//	 console.log(data[0].id),
-//	console.log(data[0].frag)
-	
-  // testing 	
-//  $scope.jsontest = window.oneIdeaJson.frags[2].src;
- // console.log($scope.jsontest);
-
-
-
-//$scope.jd = data.ideas[1].id;   
-// $scope.jd = data.ideas[2].frags[1].src;
-//$scope.jd = data.ideas.length; // the length of the json ideas array to be used for looping
-// console.log($scope.jd);
 
 var fin = data.ideas.length; //fetchedIdeasNumber = fin
 var iC = [] // ideaCollection is iC
@@ -40,3 +26,20 @@ console.log("idea collection length ya prince " + iC[1].frags[0].type); //for ea
 
   });
 });
+
+
+// ekoki.directive.reveal
+// ekoki.directive.roundabout
+// rb = roundabout
+
+angular.module("ekoki.rbDirective", []).directive('roundaboutideas', function(){
+  return{
+  restrict: 'E',
+      replace: true,
+      template: '<div ng-repeat="idea in iC">' +
+		'<ul ng-repeat="frag in idea.frags">' +		 		'<li>	the fragement {{frag.src}} </li>'+			'</ul>'+
+		'</div>',
+  };
+}); 
+
+

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="angularjs-starter">
+<html ng-app="ekoki">
    
   <head lang="en">
     <meta charset="utf-8">
@@ -8,93 +8,54 @@
 	<script src="angular.min.js"></script>
 	<script src="angular-resource.js"></script>
 
-<!--	<link rel="stylesheet" href="style.css"/> -->
- <!-- 	<link href="roundabout-shapes2.css" rel="stylesheet" />
---> 
+	<link rel="stylesheet" href="style.css"/> 
+  	<link href="roundabout-shapes2.css" rel="stylesheet" />
+ 
 	<script src="services.js"></script>
  	<script src="app.js"></script>
 	<script>
       		document.write('<base href="' + document.location + '" />');
 	</script>
 
-	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript" src="jquery.min.js"></script>
 	<script type="text/javascript" src="jquery.easing.js"></script>
 	<script type="text/javascript" src="jquery.roundabout.js"></script>
 	<script type="text/javascript" src="jquery.roundabout2.js"></script>
 	<script type="text/javascript" src="jquery.roundabout-shapes2.js"></script>
-<script src="jquery.event.drag-2.2.js"></script>
-<script src="jquery.event.drop-2.2.js"></script>	
+	<script src="jquery.event.drag-2.2.js"></script>
+	<script src="jquery.event.drop-2.2.js"></script>	
 
 
-	<script>
-   $(document).ready(function() {
-      $('ul').roundabout({
-        shape: 'tearDrop',
-        btnNext: ".next",
-	autoplay: true,
-	autoplayInitialDelay: 7,
-   	 enableDrag: true,
-	autoplayPauseOnHover: true,
-	dropEasing: "swing"
-	   });
-   });
-	</script>
- 
-<style>
-   .roundabout-holder {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      height: 35em;
-      width: 35em;
-   }
-   .roundabout-moveable-item {
-      height: 24em;
-      width: 24em;
-      cursor: pointer;
-      background-color: #ccc;
-      border: 1px solid #999;
-   }
-   .roundabout-in-focus {
-      cursor: auto;
-   }
-</style> 
   </head>
   
-<body ng-controller="MainCtrl">
-
-			<ul>
-			
-				<li>what the fuck is going on???? maaaaaaaaaaaaaaaaaaan!</li>
-			
-				<li> <img width="200" height="200"  src="http://mirnazim.org/media/img/content/tagbar.png">
-</li>
-				<li><iframe width="200" height="200" src="http://www.youtube.com/embed/2L_cGjQSR80" frameborder="0" allowfullscreen></iframe></li>
-			</ul>
-<a href="#" class="next">Next</a>
-
-
-<div ng-repeat="idea in iC">
-<div ng-repeat="frag in idea.frags">
-	<div id="slidorion">
-		<div id="slider">
-				<div id={{idea.id}} class="slide">					
-					<div class="content">
-				should the slideid be slide1,slide2, as its setup in css?	the fragement {{frag.src}}
-					</div>
-				</div> 
-		</div>
-		<div id="accordion">
-					<div class="link-header"> {{idea.id}} frag number#</div>
-						<div class="link-content">
-							<p>{{frag.src}}</p>
-							<p>some shit.</p>
-						</div>
-					</div>
-		</div>
-	</div>		
+<body>
+<!-- start of main controller -->
+<div ng-controller="MainCtrl">
+	<div ng-repeat="idea in iC">
+		<ul ng-repeat="frag in idea.frags">
+			 					
+			<li>	the fragement {{frag.src}} </li>
+		
+		</ul>
+	</div>
 </div>
-</div>   
+
+<!-- 
+<div ng-controller="MainCtrl">
+	<div ng-repeat="idea in iC">
+		<div ng-repeat="frag in idea.frags">
+			 					
+			<div class="alert">	the fragement {{frag.src}} </div>
+		
+<input ng-model="frag.src" />
+
+		</div>
+	</div>
+</div> --> 
+<!-- end of main controller -->
+
+<!-- Start of roundabout directive part -->
+	<roundaboutideas/>
+<!-- end of roundabout directive part -->
 
  </body>
-</html>

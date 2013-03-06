@@ -1,0 +1,6 @@
+t-toolbar1, #format-toolbar2 {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#format-toolbar-options { display: none; }
