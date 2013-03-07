@@ -25,10 +25,39 @@
 	<script src="jquery.event.drag-2.2.js"></script>
 	<script src="jquery.event.drop-2.2.js"></script>	
 
-
+<!-- start of gridster http://jsfiddle.net/nXv6T/1/ -->
+	<link rel="stylesheet" href="jquerygridster.css"/> 
+	<script src="angular-ui.js"></script>
+	<script src="jquery.gridster.js"></script>
+<!-- end of gridster -->
   </head>
   
 <body>
+<p><a ng-click="showHide=!showHide"><img src='http://angularjs.org/img/AngularJS-small.png'/>Toggle my gd/gn statics {{!!showHide}}</a></p>
+<div ui-show="showHide">Show wht?</div>
+<div ui-hide="showHide">Hide gd/gn statics and toggle to idea frag instead </div>
+<div ui-toggle="showHide">show gd/gn statics</div>
+ 
+<style>
+.ui-show {
+	color: blue;
+	transition: all 0.5s ease; // You should probably browser-prefix this
+}
+.ui-hide {
+	opacity: 0;
+	transition: all 0.5s ease; // You should probably browser-prefix this
+}
+</style>
+
+<!-- Gridster -->
+<div ng-controller="GridsterCtrl" class="gridster">
+    <ul ui-jq="gridster" ui-options="{widget_margins: [10, 10], widget_base_dimensions: [140, 140]}">
+        <li ng-repeat="item in items" data-row="{{item.row}}" data-col="{{item.col}}"
+        data-sizex="1" data-sizey="1">H
+        {{item.value}}         
+        </li>
+    </ul>
+</div>
 <!-- start of main controller -->
 <div ng-controller="MainCtrl">
 	<div ng-repeat="idea in iC">
@@ -39,6 +68,26 @@
 		</ul>
 	</div>
 </div>
+<!-- Gridster 
+<div ng-controller="GridsterCtrl" class="gridster">
+    <ul ui-jq="gridster" ui-options="{widget_margins: [10, 10], widget_base_dimensions: [140, 140]}">
+        <li ng-repeat="item in items" data-row="{{item.row}}" data-col="{{item.col}}"
+        data-sizex="1" data-sizey="1">H
+        {{item.value}}         
+        </li>
+    </ul>
+</div>
+ end of Gridster
+<div ng-controller="MyCtrl" class="gridster">
+    <ul ui-jq="gridster" ui-options="{widget_margins: [10, 10], widget_base_dimensions: [140, 140]}">
+        <li ng-repeat="item in items" data-row="{{item.row}}" data-col="{{item.col}}"
+        data-sizex="1" data-sizey="1">H
+        {{item.value}}         
+        </li>
+    </ul>
+</div>
+ -->
+
 
 <!-- 
 <div ng-controller="MainCtrl">

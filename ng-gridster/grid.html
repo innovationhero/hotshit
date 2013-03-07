@@ -1,0 +1,31 @@
+<html ng-app="myApp">
+
+
+
+<script src="jquery.min.js"> </script>
+
+
+
+
+<script src="angular.min.js"> </script>
+
+
+<script src="angular-ui.js"> </script>
+
+<script src="jquery.gridster.js"> </script>
+<script src="grid.js"> </script>
+
+
+
+<link rel="stylesheet"	href="jquerygridster.css">
+<div ng-controller="MyCtrl" class="gridster">
+  <ul ui-jq="gridster" ui-options="{widget_margins: [10, 10], widget_base_dimensions: [140, 140]}">
+    <li ng-repeat="item in items"
+        data-row="{{item.row}}"
+        data-col="{{item.col}}"
+        data-sizex="1"
+        data-sizey="1">Hello {{item.value}}</li>
+  </ul>
+</div>
+
+</html>

@@ -1,4 +1,5 @@
-var app = angular.module('ekoki', ['ekoki.jsonService','ekoki.rbDirective']);
+var app = angular.module('ekoki',
+ ['ekoki.jsonService', 'ui']);
 
 
 
@@ -27,12 +28,32 @@ console.log("idea collection length ya prince " + iC[1].frags[0].type); //for ea
   });
 });
 
+// GridsterCtrl
+// var myApp = angular.module("myApp", ["ui"]);
+app.controller("GridsterCtrl", function ($scope) {
+    $scope.items = [{
+        value: "first",
+        col: 1,
+        row: 1
+    }, {
+        value: "http://www.youtube.com/embed/nUonwNnj8Eo",
+        col: 2,
+        row: 1
+    }, {
+        value: 'third',
+        col: 1,
+        row: 2
+    }];
+});
+// end of GridsterCtrl
+
+
+
 
 // ekoki.directive.reveal
 // ekoki.directive.roundabout
 // rb = roundabout
-
-angular.module("ekoki.rbDirective", []).directive('roundaboutideas', function(){
+/*angular.module("ekoki.rbDirective", []).directive('roundaboutideas', function(){
   return{
   restrict: 'E',
       replace: true,
@@ -41,5 +62,5 @@ angular.module("ekoki.rbDirective", []).directive('roundaboutideas', function(){
 		'</div>',
   };
 }); 
-
+*/
 
