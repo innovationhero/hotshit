@@ -8,7 +8,7 @@ app.directive('gridster', function($timeout) {
       var ul = $element.find('ul');
       var defaultOptions = {
         widget_margins: [5, 5],
-        widget_base_dimensions: [40, 40]
+        widget_base_dimensions: [150, 80]
       };
       var options = angular.extend(defaultOptions, $scope.$eval($attributes.options));
 
