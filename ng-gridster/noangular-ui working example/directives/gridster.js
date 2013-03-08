@@ -8,7 +8,7 @@ app.directive('gridster', function($timeout) {
       var ul = $element.find('ul');
       var defaultOptions = {
         widget_margins: [5, 5],
-        widget_base_dimensions: [80, 80]
+        widget_base_dimensions: [180, 100]
       };
       var options = angular.extend(defaultOptions, $scope.$eval($attributes.options));
 
@@ -44,6 +44,8 @@ app.directive('gridster', function($timeout) {
   };
 });
 
+// this directive should contain simplesli.de code
+// also should fetch from Service Json $resource or $http
 app.directive('widget', function() {
   return {
     restrict: 'AC',
@@ -57,3 +59,21 @@ app.directive('widget', function() {
     }
   };
 });
+
+/*
+// this directive should contain simplesli.de code
+// also should fetch from Service Json $resource or $http
+app.directive('widget', function() {
+  return {
+    restrict: 'AC',
+    scope: { widgetModel: '=' },
+    replace: true,
+    template:
+      '<li data-col="{{widgetModel.col}}" data-row="{{widgetModel.row}}" data-sizex="{{widgetModel.sizex}}" data-sizey="{{widgetModel.sizey}}">'+
+        '{{widgetModel.text}},notveryimp <iframe width="120" height="115" src="http://www.youtube.com/embed/epRNaSIibew" frameborder="0" allowfullscreen></iframe> ({{widgetModel.row}},{{widgetModel.col}})'+
+      '</li>',
+    link: function($scope, $element, $attributes, $controller) {
+    }
+  };
+});
+*/

@@ -2,7 +2,7 @@ var app = angular.module('plunker', []);
 
 app.controller('MainCtrl', function($scope) {
   $scope.widgets = [
-    {text:'Widget #1', row:1, col:1, sizex:2, sizey:2},
+    {id:"first", text:'Widget #1', row:1, col:1, sizex:2, sizey:2},
     {text:'Widget #2', row:2, col:1, sizex:2, sizey:2},
     {text:'Widget #3', row:1, col:2, sizex:2, sizey:2},
     {text:'Widget #4', row:2, col:2, sizex:2, sizey:2}
@@ -19,7 +19,10 @@ app.controller('MainCtrl', function($scope) {
 	
   $scope.resizeWidget = function() {
 	//takes a widget as pramater passed in 
-	$scope.widgets 
+//	$scope.widgets[0].resize_widget(this, 8,8);
+	$scope.widgets[0].sizex = 20;
+// .resize_widget( $widget, [size_x], [size_y] )
+ 
 	}
   $scope.combineWidget = function() {
 	// takes 2 widgets as paramater

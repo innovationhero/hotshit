@@ -11,13 +11,26 @@
 
 <!-- this one adds a new widget nice & easy $scope.addWidget = function(){.... $scope.widgets.push()... } -->
   <button ng-click="addWidget()">Add</button>
+<button ng-click="resizeWidget()"> resiZe</button>
 
 
 
 
 
-
-
+<div class="simpleSlide-window" rel="this_particular_slideshow">
+    <div class="simpleSlide-tray" rel="this_particular_slideshow">
+        <div class="simpleSlide-slide" rel="this_particular_slideshow">
+            /* Images, tables, content, whatever you want may
+             * go into these divs. But, the items contained
+             * within the simpleSlide-slide classed elements
+             * MUST have a fixed size, and each element that
+             * is part of the slideshow should have the same
+             * exact pixel dimensions. If the contained
+             * elements are images, the plugin will figure out the dimensions.
+             */
+        </div>
+    </div>
+</div>
 
 
 
@@ -29,6 +42,7 @@
   <!--scripts careful with ordering thats it!!!-->
   <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
   <script src="https://raw.github.com/ducksboard/gridster.js/master/dist/jquery.gridster.js"></script>
+<script src="simpleSlide.js" type="text/javascript"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.2/angular.js"></script>
   <script src="app.js"></script>
   <script src="directives/gridster.js"></script>
