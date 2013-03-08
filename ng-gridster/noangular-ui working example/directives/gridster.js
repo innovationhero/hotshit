@@ -8,7 +8,7 @@ app.directive('gridster', function($timeout) {
       var ul = $element.find('ul');
       var defaultOptions = {
         widget_margins: [5, 5],
-        widget_base_dimensions: [150, 80]
+        widget_base_dimensions: [80, 80]
       };
       var options = angular.extend(defaultOptions, $scope.$eval($attributes.options));
 
@@ -51,7 +51,7 @@ app.directive('widget', function() {
     replace: true,
     template:
       '<li data-col="{{widgetModel.col}}" data-row="{{widgetModel.row}}" data-sizex="{{widgetModel.sizex}}" data-sizey="{{widgetModel.sizey}}">'+
-        '{{widgetModel.text}}, ({{widgetModel.row}},{{widgetModel.col}})'+
+        '{{widgetModel.text}},notveryimp <iframe width="120" height="115" src="http://www.youtube.com/embed/epRNaSIibew" frameborder="0" allowfullscreen></iframe> ({{widgetModel.row}},{{widgetModel.col}})'+
       '</li>',
     link: function($scope, $element, $attributes, $controller) {
     }
