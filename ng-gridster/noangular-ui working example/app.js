@@ -18,9 +18,11 @@ app.controller('MainCtrl', function($scope) {
   };
 	
   $scope.resizeWidget = function() {
-	// 
+	//takes a widget as pramater passed in 
+	$scope.widgets 
 	}
   $scope.combineWidget = function() {
-	// 
+	// takes 2 widgets as paramater
+	$scope.widgets
 	}
 });
