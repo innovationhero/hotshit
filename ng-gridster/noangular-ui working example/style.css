@@ -12,6 +12,11 @@ li{
     list-style: none;
 }
 
+.handle {
+    border-bottom: 1px solid black;
+    background-color: red
+}
+
 .gridster {
     position:relative;
 }
