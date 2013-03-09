@@ -7,7 +7,7 @@ app.directive('gridster', function($timeout) {
       var gridster;
       var ul = $element.find('ul');
       var defaultOptions = {
-        widget_margins: [5, 5],
+        widget_margins: [10, 10],
         widget_base_dimensions: [180, 100]
       };
       var options = angular.extend(defaultOptions, $scope.$eval($attributes.options));
@@ -27,7 +27,7 @@ app.directive('gridster', function($timeout) {
           $scope.$apply();
         };
       });
-
+// This is important as it seems this is jquery $ gridster documentation.....................
       var attachElementToGridster = function(li) {
         //attaches a new element to gridster
         var $w = li.addClass('gs_w').appendTo(gridster.$el).hide();
@@ -44,7 +44,7 @@ app.directive('gridster', function($timeout) {
   };
 });
 
-// this directive should contain simplesli.de code
+// this directive should contain content slider code
 // also should fetch from Service Json $resource or $http
 app.directive('widget', function() {
   return {
@@ -52,16 +52,37 @@ app.directive('widget', function() {
     scope: { widgetModel: '=' },
     replace: true,
     template:
-      '<li data-col="{{widgetModel.col}}" data-row="{{widgetModel.row}}" data-sizex="{{widgetModel.sizex}}" data-sizey="{{widgetModel.sizey}}">'+
-        '{{widgetModel.text}},notveryimp <iframe width="120" height="115" src="http://www.youtube.com/embed/epRNaSIibew" frameborder="0" allowfullscreen></iframe> ({{widgetModel.row}},{{widgetModel.col}})'+
+      '<li class="sexyshadow" data-col="{{widgetModel.col}}" data-row="{{widgetModel.row}}" data-sizex="{{widgetModel.sizex}}" data-sizey="{{widgetModel.sizey}}">'+
+        '{{widgetModel.text}},row ({{widgetModel.row}}), col({{widgetModel.col}})'+ ', sizex {{widgetModel.sizex}} , sizey {{widgetModel.sizey}}' +
       '</li>',
     link: function($scope, $element, $attributes, $controller) {
     }
   };
 });
 
-/*
-// this directive should contain simplesli.de code
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*// =======================================================
+// this directive should contain content slider code
 // also should fetch from Service Json $resource or $http
 app.directive('widget', function() {
   return {
@@ -76,4 +97,4 @@ app.directive('widget', function() {
     }
   };
 });
-*/
+// ======================================================*/

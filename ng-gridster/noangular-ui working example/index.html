@@ -6,16 +6,28 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body ng-controller="MainCtrl">
-  <div class="gridster" model="widgets" options="{ widget_margins: [1, 1] }"></div>
+
+<style>
+.sexyshadow {
+  box-shadow: 3px 3px 10px 5px #000, 0 0 4px rgba(0, 0, 0, .5) inset;
+
+}
+ </style>
+  <div class="gridster" model="widgets" options="{ widget_margins: [2, 2], widget_base_dimensions:[180,100] }"></div>
 
 
 <!-- this one adds a new widget nice & easy $scope.addWidget = function(){.... $scope.widgets.push()... } -->
   <button ng-click="addWidget()">Add</button>
 <button ng-click="resizeWidget()"> resiZe</button>
 
+
+
+
+
+
 <!--when one widget is dragged away from its place the other all widgets use avgrund blur css effect until one is chosen to be combined with http://lab.hakim.se/avgrund/ -->
 
-
+<!-- the idea is to bind width and height properties of the widget with another parent container used for resizing and placin or somthing like this, angualr binding maigc is to be done -->
 
 
 
