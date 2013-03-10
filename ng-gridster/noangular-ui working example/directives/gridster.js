@@ -31,15 +31,11 @@ app.directive('gridster', function($timeout) {
 //	};
 
 
-	gridster.options.draggable.handle = function(event,ui){ 
-handle = '.title';
-console.log("handle code");
-};
+//	gridster.options.draggable.drag.handle = ".handle";
  
  
-//	gridster.options.draggable.drag = function(event, ui){
-//	console.log("draggable.drag");
-//	}	
+	gridster.options.draggable.handle = ("handle");
+		
 	
 	// http://gridster.net/#options
         gridster.options.draggable.stop = function(event, ui) {

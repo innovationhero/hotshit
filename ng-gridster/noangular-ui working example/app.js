@@ -19,13 +19,21 @@ app.controller('MainCtrl', function($scope) {
 
    // $scope.widgets.push({text:'Widget #'+($scope.widgets.length+1), row:3, col:1, sizex:randomSizex, sizey:randomSizey});
   };
+
+////////////////////////////////////////////////////////
+ $scope.rearrange  = function(){
+// this function is meant to rearragne the widgets based on its fitness value
+
+ }
+
+
 	
 /////////////////////////////////////////////////////////
   $scope.resizeWidget = function() {
 //takes a widget as pramater passed in 
 //	$scope.widgets[0].resize_widget(this, 8,8);
   $scope.widgets[0].sizex++;
- $scope.widgets[0].scope().$apply();
+// $scope.$apply();
 // angular.element(this).scope().$apply();
 // $scope.$apply();
 // $scope.widgets[0] =  $scope.widgets.push({text:'Widget #', row:1, col:1, sizex:2, sizey: 2});
