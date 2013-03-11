@@ -7,12 +7,15 @@
 </head>
 <body>
   
-<div ng-controller="PointsCtrl">
-Award Points {{points}}</div>
+<div ng-controller="PointsCtrl" ng-model="points">
+Award Points {{points}}
   
 <button ng-click="stop()">Stop</button>    
 
 <button ng-click="removePoints()"> removePoints</button>
 <button ng-click="awardPoints()"> awardPoints </button>   
+
+</div>
+
 </body>
 </html>

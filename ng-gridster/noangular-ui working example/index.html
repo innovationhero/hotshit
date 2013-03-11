@@ -20,8 +20,8 @@
 <button ng-click="rearrange()">rearrange</button>
 <!--<button ng-click="onTimeout()"><onTimeout</button> -->
 
-<pointstimer/>
-
+<input type="integer" min=1 ng-model="fitness" required>
+<b> fitness: </b> {{fitness * 100 }}
 
 <!--when one widget is dragged away from its place the other all widgets use avgrund blur css effect until one is chosen to be combined with http://lab.hakim.se/avgrund/ -->
 
