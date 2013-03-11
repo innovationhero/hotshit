@@ -6,15 +6,18 @@
 
 </head>
 <body>
-  
+
+<!-- From the ng-model attribute, Angular automatically sets up two-way data binding, which can be used to addup points to the $scope.points easily -->  
 <div ng-controller="PointsCtrl" ng-model="points">
 Award Points {{points}}
+
+or interface the user with a clear<br><b> "Your Score {{points}}" </b><br>on the top right corner or top center so augment his sense of achievement.
   
 <button ng-click="stop()">Stop</button>    
 
 <button ng-click="removePoints()"> removePoints</button>
 <button ng-click="awardPoints()"> awardPoints </button>   
-
+<button ng-click="awardfewPoints()"> awardfewPoints </button>
 </div>
 
 </body>
