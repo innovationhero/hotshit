@@ -1,0 +1,18 @@
+<!doctype html>
+<html ng-app="points">
+<head>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.0.3/angular.min.js"></script> 
+<script src="app.js"></script>
+
+</head>
+<body>
+  
+<div ng-controller="PointsCtrl">
+Award Points {{points}}</div>
+  
+<button ng-click="stop()">Stop</button>    
+
+<button ng-click="removePoints()"> removePoints</button>
+<button ng-click="awardPoints()"> awardPoints </button>   
+</body>
+</html>
