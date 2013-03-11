@@ -1,3 +1,18 @@
+
+app.directive('pointstimer', function($timeout){
+	return{
+		restrict: 'EAC', 
+		template: '<div> {{points}} </div>',
+		link: function($scope, $timeout){
+			//var points;
+			$timeout(function(){
+			$scope.points++, 1000
+			});
+			$scope.$apply();
+		}	
+	};
+});
+
 app.directive('gridster', function($timeout) {
   return {
     restrict: 'AC',
@@ -5,38 +20,22 @@ app.directive('gridster', function($timeout) {
     template: '<ul><div widget ng-repeat="item in model" widget-model="item"></div></ul>',
     link: function($scope, $element, $attributes, $controller) {
       var gridster;
-      var ul = $element.find('ul');
+      var ul = $element.find('ul'); // find() - Limited to lookups by tag name in case if only using jqLite http://api.jquery.com/find/ 
       var defaultOptions = {
         widget_margins: [10, 10],
         widget_base_dimensions: [180, 100]
       };
-      var options = angular.extend(defaultOptions, $scope.$eval($attributes.options));
+      var options = angular.extend(defaultOptions, $scope.$eval($attributes.options));// Extends the destination object dst by copying all of the properties from the src object(s) to dst. You can specify multiple src objects. angular.extend(dst, src); http://docs.angularjs.org/api/angular.extend // so that from the html page options can be passed and it will extend the defaultOptions object. <div class="gridster" model="widgets" options="{widget_margins:[5,5],  widget_base_dimensions:[180,180]}"> </div> 
 
       $timeout(function() {
         gridster = ul.gridster(options).data('gridster');
 
-//	gridster.min_rows = 3;
-     	
-	// gridster.options.widget_base_dimensions = [10, 10]; // i don't understand widget_base_dimensions!!
-
-//	gridster.options.avoid_overlapped_widgets = true;
-	 
-	// gridster.enable();   // enable dragging.
-	// gridster.disable(); // Disables dragging.	
-        
- //       gridster.resize_widget($widget, [6], [6] );
-     
-//	gridster.options.collision.on_overlap = function(collider_data) { 
-//	console.log("collision.on_overlap");	
-//	};
-
-
-//	gridster.options.draggable.drag.handle = ".handle";
- 
- 
-	gridster.options.draggable.handle = ("handle");
+	console.log(gridster.get_widgets_under_player());  
+//	gridster.options.draggable.handle = ("handle");
 		
-	
+//	if (gridster.is_widget){console.log("bedan feh Determines if there is a widget in the cell represented by col/row params.")} else {console.log("mafesh")};
+
+
 	// http://gridster.net/#options
         gridster.options.draggable.stop = function(event, ui) {
           //update model
@@ -55,7 +54,10 @@ app.directive('gridster', function($timeout) {
       // This is important as it seems this is jquery $ gridster documentation....
       var attachElementToGridster = function(li) {
         //attaches a new element to gridster
-        var $w = li.addClass('gs_w').appendTo(gridster.$el).hide();
+       // if (gridster.is_widget){console.log("bedan feh Determines if there is a widget in the cell represented by col/row params.")} else {console.log("mafesh")};
+
+
+var $w = li.addClass('gs_w').appendTo(gridster.$el).hide();
         gridster.$widgets = gridster.$widgets.add($w);
         gridster.register_widget($w).add_faux_rows(1).set_dom_grid_height();
         // $w.fadeIn(); // the original code is jquery fadeIn();
@@ -88,46 +90,7 @@ app.directive('widget', function() {
       '<li data-col="{{widgetModel.col}}" data-row="{{widgetModel.row}}" data-sizex="{{widgetModel.sizex}}" data-sizey="{{widgetModel.sizey}}">'+ '<div class="handle">f</div>'  + 
         '{{widgetModel.text}},row ({{widgetModel.row}}), col({{widgetModel.col}})'+ ', sizex {{widgetModel.sizex}} , sizey {{widgetModel.sizey}}' +
       '</li>',
-    link: function($scope, $element, $attributes, $controller) {
+    link: function($scope, $element, $attributes, $controller, $timeout) {
     }
   };
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*// =======================================================
-// this directive should contain content slider code
-// also should fetch from Service Json $resource or $http
-app.directive('widget', function() {
-  return {
-    restrict: 'AC',
-    scope: { widgetModel: '=' },
-    replace: true,
-    template:
-      '<li data-col="{{widgetModel.col}}" data-row="{{widgetModel.row}}" data-sizex="{{widgetModel.sizex}}" data-sizey="{{widgetModel.sizey}}">'+
-        '{{widgetModel.text}},notveryimp <iframe width="120" height="115" src="http://www.youtube.com/embed/epRNaSIibew" frameborder="0" allowfullscreen></iframe> ({{widgetModel.row}},{{widgetModel.col}})'+
-      '</li>',
-    link: function($scope, $element, $attributes, $controller) {
-    }
-  };
-});
-// ======================================================*/

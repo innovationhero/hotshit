@@ -1,12 +1,15 @@
+// $scope.$broadcast for the timer
+
+
 var app = angular.module('plunker', []);
 
-app.controller('MainCtrl', function($scope) {
+app.controller('MainCtrl', function($scope, $timeout){
   $scope.widgets = [
-    {text:'Widget #1', row:1, col:1, sizex:1, sizey:1},
-    {text:'Widget #2', row:2, col:1, sizex:1, sizey:2},
-    {text:'Widget #3', row:1, col:2, sizex:3, sizey:3},
-    {text:'Widget #4', row:3, col:5, sizex:1, sizey:1},
-    {text:'Widget #5', row:1, col:5, sizex:1, sizey:2}
+    {fitness:5, text:'Widget #1', row:1, col:1, sizex:1, sizey:1},
+    {fitness:4, text:'Widget #2', row:2, col:1, sizex:1, sizey:2},
+    {fitness:3, text:'Widget #3', row:1, col:2, sizex:3, sizey:3},
+    {fitness:2, text:'Widget #4', row:3, col:5, sizex:1, sizey:1},
+    {fitness:1, text:'Widget #5', row:1, col:5, sizex:1, sizey:2}
   ];
 
  
@@ -23,16 +26,50 @@ app.controller('MainCtrl', function($scope) {
 ////////////////////////////////////////////////////////
  $scope.rearrange  = function(){
 // this function is meant to rearragne the widgets based on its fitness value
+ $scope.widgets[2].row = 1;
+$scope.widgets[2].col = 1;
+$scope.widgets[2].text = "Rearrangement Sir!";
+ };
 
- }
+
+$scope.scramble = function($watch){
+var bitch = $scope.widgets;
+//$scope.widgets.sort(function() {return 0.5 - Math.random()}) //Array elements now scrambled
+
+bitch.sort(function(a,b){return b - a});
+bitch.forEach(function(entry) {
+entry.row++;
+entry.col++;
+entry.fitness++;
+    console.log(entry.fitness);
+});   
+
+$scope.widgets = bitch; 
+//console.log($scope.widgets[0].text + "The Fitness " + $scope.widgets[0].fitness);
+}
 
 
+ $timeout(function(){
+	$scope.widgets[0].sizex++;
+	
+ }, 1000);
+
+
+
+ $scope.onTimeout = function(){
+       //  $scope.counter++;
+ console.log($scope.widgets[0].length); 
+ $scope.widgets[0].sizex++;
+        mytimeout = $timeout($scope.onTimeout,1000);
+    };
 	
 /////////////////////////////////////////////////////////
-  $scope.resizeWidget = function() {
+  $scope.resizeWidget = function(){
 //takes a widget as pramater passed in 
 //	$scope.widgets[0].resize_widget(this, 8,8);
-  $scope.widgets[0].sizex++;
+
+ $scope.widgets[0].sizex++;
+ 
 // $scope.$apply();
 // angular.element(this).scope().$apply();
 // $scope.$apply();
@@ -42,11 +79,11 @@ app.controller('MainCtrl', function($scope) {
 //x = x + 1; 
 //	$scope.widgets[0] =  { sizex:2, sizey:2};
 // .resize_widget( $widget, [size_x], [size_y] )
- }
+};
 
 /////////////////////////////////////////////////////////
   $scope.combineWidget = function() {
 	// takes 2 widgets as paramater
 	$scope.widgets
-  }
+  };
 });
