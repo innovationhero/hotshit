@@ -51,8 +51,9 @@ $scope.widgets = bitch;
 
  $timeout(function(){
 	$scope.widgets[0].sizex++;
-	
- }, 1000);
+//$scope.$apply(gridster.resize_widget($scope.widgets[0], 4,4));	
+$scope.$apply();
+ }, 4000);
 
 
 

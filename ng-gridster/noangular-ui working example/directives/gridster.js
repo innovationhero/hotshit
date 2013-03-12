@@ -1,18 +1,4 @@
 
-app.directive('pointstimer', function($timeout){
-	return{
-		restrict: 'EAC', 
-		template: '<div> {{points}} </div>',
-		link: function($scope, $timeout){
-			//var points;
-			$timeout(function(){
-			$scope.points++, 1000
-			});
-			$scope.$apply();
-		}	
-	};
-});
-
 app.directive('gridster', function($timeout) {
   return {
     restrict: 'AC',
@@ -45,6 +31,7 @@ app.directive('gridster', function($timeout) {
             var widget = $scope.model[index];
             widget.row = li.attr('data-row');
             widget.col = li.attr('data-col');
+	   // widget.placeholder('data-row','data-col'); 
           });
           $scope.$apply();
         };
@@ -60,6 +47,8 @@ app.directive('gridster', function($timeout) {
 var $w = li.addClass('gs_w').appendTo(gridster.$el).hide();
         gridster.$widgets = gridster.$widgets.add($w);
         gridster.register_widget($w).add_faux_rows(1).set_dom_grid_height();
+//  gridster.resize_widget($w, [4], [4] );
+//	$w.set_placeholder(4,4);
         // $w.fadeIn(); // the original code is jquery fadeIn();
 	// $w.slideDown(); // works funny jquery slidedown
 	$w.animate({
@@ -69,6 +58,15 @@ var $w = li.addClass('gs_w').appendTo(gridster.$el).hide();
     // Animation complete.
   });
       };
+
+
+// my watch code in atempd to adjust the placeholder size
+      $scope.$watch('model[0].sizex',function(){
+//$scope.widgets[0].sizex++;
+//console.log('model[0].sizex');
+console.log("sizex is being watched from the directive thorugh the scope");
+ });
+			
       $scope.$watch('model.length', function(newValue, oldValue) {
         if (newValue != oldValue+1) return; //not an add
         var li = ul.find('li').eq(newValue-1); //latest li element
