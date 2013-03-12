@@ -40,11 +40,13 @@ bitch.sort(function(a,b){return b - a});
 bitch.forEach(function(entry) {
 entry.row++;
 entry.col++;
+entry.sizex++;
 entry.fitness++;
     console.log(entry.fitness);
 });   
 
 $scope.widgets = bitch; 
+$scope.$apply();
 //console.log($scope.widgets[0].text + "The Fitness " + $scope.widgets[0].fitness);
 }
 
