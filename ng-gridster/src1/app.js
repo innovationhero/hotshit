@@ -16,9 +16,6 @@ how come the geek got lost while he was trying to visit his geeky friend at his 
 coz when he called his geeky friend to ask for directions he replied "use the force luke" and hangup and refused to pickup again waiting......
 */
 
-
-
-
 var app = angular.module('plunker', []);
 
 app.controller('MainCtrl', function($scope, $timeout){

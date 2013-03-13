@@ -1,0 +1,15 @@
+<html ng-app>
+
+<head>
+
+    <script src="http://code.angularjs.org/1.0.5/angular.min.js"></script>
+    <script src="http://code.angularjs.org/1.0.5/angular-resource.js"></script>
+	<script src="app.js"></script>
+
+  </head>
+<body>
+<ul class="messages">
+  <li ng-repeat="entry in log">{{ entry.msg }}</li>
+</ul>
+</body>
+</html>

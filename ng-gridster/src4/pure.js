@@ -41,6 +41,8 @@ $(function() {
         minHeight: grid_size,
         containment: '#layouts_grid ul',
         autoHide: true,
+      //  alsoResize: '#'+$(this).attr('id')+' *',
+        alsoResize: '.layout_block *',
         stop: function(event, ui) {
             var resized = $(this);
             setTimeout(function() {

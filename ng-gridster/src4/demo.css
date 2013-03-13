@@ -70,6 +70,19 @@
     cursor: pointer;
     margin: 3px 0px 4px 4px;
 }
+/*
+.layouts_grid .remove_elementL{
+    float: left;
+    color: black;
+    font-size: 22px; 
+    font-weight: bold;
+    padding: 2px 5px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    cursor: pointer;
+    margin: 3px 0px 4px 4px;
+} 
+
+*/
 .layouts_grid .layout_block .info {
     color: white;
     font-size: 16px;
@@ -122,9 +135,9 @@
 .layouts_grid .preview-holder {
     z-index: 1;
     position: absolute;
-/*    background-color: inherit; */ background-color: red; /*this works well for me, opacity is important too*/
+/*    background-color: inherit; */ background-color: grey; /*this works well for me, opacity is important too*/
     border: none;
-    opacity: 0.9;
+    opacity: 0.4;
 }
 
 .layouts_grid .player-revert {
