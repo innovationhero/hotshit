@@ -1,6 +1,11 @@
 /*! gridster.js - v0.1.0 - 2012-10-20
 * http://gridster.net/
 * Copyright (c) 2012 ducksboard; Licensed MIT */
+.grid_elements table {
+    border-collapse: separate;
+    width: 200px;
+    height: 200px;
+}
 
 body
 {

@@ -1010,7 +1010,7 @@
             ];
             this.remove_empty_cells.apply(this, rows_to_remove_holes);
         }
-
+this.init(); //  a fix from https://github.com/ducksboard/gridster.js/issues/32
         return $widget;
     };
 

@@ -1,4 +1,22 @@
-// $scope.$broadcast for the timer
+/* 
+		  _____   _                              __   _              __                
+		 / ___ \ (_)___   ___  ___  _  __ ___ _ / /_ (_)___   ___   / /  ___  ____ ___ 
+		/ / _ `// // _ \ / _ \/ _ \| |/ // _ `// __// // _ \ / _ \ / _ \/ -_)/ __// _ \
+		\ \_,_//_//_//_//_//_/\___/|___/ \_,_/ \__//_/ \___//_//_//_//_/\__//_/   \___/
+		 \___/                                                                         
+
+
+				 _   _._|_|_|_|_ o._ (~|  o _   _ ._   o _| _ _ |
+				}_\/}_|  _| | | ||| | _|  |_\  (_|| |  |(_|}_(_|o
+*/
+
+/* 
+how come the geek got lost while he was trying to visit his geeky friend at his place????
+
+coz when he called his geeky friend to ask for directions he replied "use the force luke" and hangup and refused to pickup again waiting......
+*/
+
+
 
 
 var app = angular.module('plunker', []);
