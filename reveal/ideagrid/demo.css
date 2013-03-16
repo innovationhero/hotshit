@@ -1,8 +1,3 @@
-.resizable {
-    
-}
-
-
 .additional_element {
     margin: 5px;
     padding: 5px;
@@ -44,9 +39,6 @@
 }
 
 .ui-resizable-resizing {
-    border-bottom: 1px solid black;
-   
- color: white;
     z-index: 9999999 !important;
 }
 
@@ -70,26 +62,13 @@
 .layouts_grid .remove_element {
     float: right;
     color: black;
-    font-size: 22px;
+    font-size: 12px;
     font-weight: bold;
     padding: 2px 5px;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     cursor: pointer;
     margin: 3px 0px 4px 4px;
 }
-/*
-.layouts_grid .remove_elementL{
-    float: left;
-    color: black;
-    font-size: 22px; 
-    font-weight: bold;
-    padding: 2px 5px;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    cursor: pointer;
-    margin: 3px 0px 4px 4px;
-} 
-
-*/
 .layouts_grid .layout_block .info {
     color: white;
     font-size: 16px;
@@ -102,8 +81,8 @@
 
 .layouts_grid {
     position:relative !important;
-    width: 900px;
-    min-height: 100px;
+    width: 700px;
+    min-height: 300px;
     float: left;
 }
 
@@ -118,7 +97,7 @@
 
 .layouts_grid ul {
     list-style-type: none;
-    min-height: 660px; /*this might fix the maximum hight problem but it seems buggy so far */
+    min-height: 110px;
 }
 .layouts_grid .gs_w{
     z-index: 2;
@@ -142,9 +121,9 @@
 .layouts_grid .preview-holder {
     z-index: 1;
     position: absolute;
-/*    background-color: inherit; */ background-color: grey; /*this works well for me, opacity is important too*/
+    background-color: black;
     border: none;
-    opacity: 0.4;
+    opacity: 0.3;
 }
 
 .layouts_grid .player-revert {

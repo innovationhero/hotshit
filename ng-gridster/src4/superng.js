@@ -19,3 +19,6 @@ app.controller('MainCtrl', function($scope, $timeout){
     {fitness:2, text:'Widget #4', row:3, col:5, sizex:1, sizey:1},
     {fitness:1, text:'Widget #5', row:1, col:5, sizex:1, sizey:2}
   ];
+
+
+

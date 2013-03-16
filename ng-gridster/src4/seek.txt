@@ -1,0 +1,31 @@
+- what does function(event, ui) do? where it come from? is it possible to add it to any custom function i create? will it just work outside of the box?
+- what does start: do?
+- when creating var self inside the start: function(event, ui) refeer to? is this somthing inherted from the plugin decleration $ui.plugin.add("resizable", "alsoResizeReverse", {... }); 
+- what does $(this).data("resizable-alsoresize-reverse", {....}); do?
+- what does function parseInt($(this).width(),10), height: parseInt($(this).height(), 10)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Git feature request: make sourcecode.file and questions-answers.file where QA.file basically is binded to the sourcecode.file line number explaining what each line of code do... and if the sourcecode.file line numbers change the answers is adjusted accordingly 
+
+example:
+
+line 3 in the sourcecode file have the corssponding line 3 explainination in the questions-answers.file, if someone adds a new line of code above line 3 in the sourcecode file then line 3 will become line 4, so the QA.file adjusts its answers that used to be for line 3 to be these are the QAs for line 4
