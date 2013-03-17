@@ -45,6 +45,7 @@ $(function() {
         minHeight: grid_size,
         containment: '#layouts_grid ul',
         autoHide: true,
+
     start: function(event, ui) {
         var resized = $(this);
         $('.layout_block').resizable( "option", "maxWidth", resized.data('maxx') * grid_size ); //maximum x of a block
@@ -60,7 +61,7 @@ $(function() {
                 resizeBlock(resized);
             }, 300);
         }
-    });
+    },       "resize", "auto");
 
     $('.ui-resizable-handle').hover(function() {
         layout.disable();
